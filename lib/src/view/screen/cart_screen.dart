@@ -6,6 +6,7 @@ import 'package:flutter_japanese_restaurant_app/src/view/widget/empty_widget.dar
 import 'package:get/get.dart';
 import '../../../core/app_style.dart';
 import '../../controller/food_controller.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 final FoodController controller = Get.put(FoodController());
 
@@ -119,66 +120,84 @@ class CartScreen extends StatelessWidget {
       shrinkWrap: true,
       itemCount: controller.cartFood.length,
       itemBuilder: (_, index) {
-        return Container(
-          padding: const EdgeInsets.all(5),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: controller.isLightTheme
-                ? Colors.white
-                : DarkThemeColor.primaryLight,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const SizedBox(width: 20),
-              Image.asset(controller.cartFood[index].image,
-                  scale: 10),
-              const SizedBox(width: 20),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    controller.cartFood[index].name,
-                    style: Theme.of(context).textTheme.headline2,
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    "\$${controller.cartFood[index].price}",
-                    style: Theme.of(context).textTheme.headline5,
-                  ),
-                ],
-              ),
-              const Spacer(),
-              Column(
-                children: [
-                  CounterButton(
-                    onIncrementSelected: () =>
-                        controller.increaseItem(
-                            controller.cartFood[index]),
-                    onDecrementSelected: () =>
-                        controller.decreaseItem(
-                            controller.cartFood[index]),
-                    size: const Size(24, 24),
-                    padding: 0,
-                    label: Text(
-                      controller.cartFood[index].quantity
-                          .toString(),
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline2,
+        return Dismissible(
+          onDismissed: (direction){
+            if(direction==DismissDirection.startToEnd) {
+              controller.removeCartItemAtSpecificIndex(index);
+            }
+          },
+          key: Key(controller.cartFood[index].name),
+          background: Row(children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 25),
+                decoration: BoxDecoration(
+                    color: Colors.redAccent,
+                    borderRadius: BorderRadius.circular(15)
+                ),
+                child: const FaIcon(FontAwesomeIcons.trash)
+            ),
+          ],),
+          child: Container(
+            padding: const EdgeInsets.all(5),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: controller.isLightTheme
+                  ? Colors.white
+                  : DarkThemeColor.primaryLight,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const SizedBox(width: 20),
+                Image.asset(controller.cartFood[index].image,
+                    scale: 10),
+                const SizedBox(width: 20),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      controller.cartFood[index].name,
+                      style: Theme.of(context).textTheme.headline2,
                     ),
-                  ),
-                  Text("\$${controller.calculatePricePerEachItem(
-                      controller.cartFood[index])}"
-                    ,
-                    style: h2Style.copyWith(
-                        color: LightThemeColor.accent),
-                  )
-                ],
-              )
-            ],
-          ),
-        ).fadeAnimation(index * 0.6);
+                    const SizedBox(height: 5),
+                    Text(
+                      "\$${controller.cartFood[index].price}",
+                      style: Theme.of(context).textTheme.headline5,
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                Column(
+                  children: [
+                    CounterButton(
+                      onIncrementSelected: () =>
+                          controller.increaseItem(
+                              controller.cartFood[index]),
+                      onDecrementSelected: () =>
+                          controller.decreaseItem(
+                              controller.cartFood[index]),
+                      size: const Size(24, 24),
+                      padding: 0,
+                      label: Text(
+                        controller.cartFood[index].quantity
+                            .toString(),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline2,
+                      ),
+                    ),
+                    Text("\$${controller.calculatePricePerEachItem(
+                        controller.cartFood[index])}"
+                      ,
+                      style: h2Style.copyWith(
+                          color: LightThemeColor.accent),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ).fadeAnimation(index * 0.6),
+        );
       },
       separatorBuilder: (BuildContext context, int index) {
         return const Padding(padding: EdgeInsets.all(10));

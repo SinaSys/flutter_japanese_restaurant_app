@@ -94,6 +94,12 @@ class FoodController extends GetxController {
     }
   }
 
+  removeCartItemAtSpecificIndex(int index){
+    cartFood.removeAt(index);
+    calculateTotalPrice();
+    update();
+  }
+
 
   void changeTheme() {
     if (theme.value == AppTheme.darkTheme) {

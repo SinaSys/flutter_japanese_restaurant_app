@@ -28,25 +28,25 @@ class FoodListView extends StatelessWidget {
         itemBuilder: (_, index) {
           Food food =
               isReversedList ? foods.reversed.toList()[index] : foods[index];
-          return Container(
-            width: 160,
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: controller.isLightTheme
-                    ? Colors.white
-                    : DarkThemeColor.primaryLight,
-                borderRadius: const BorderRadius.all(Radius.circular(20))),
-            child: Padding(
+          return GestureDetector(
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => FoodDetailScreen(food: food),
+                ),
+              );
+            },
+            child: Container(
+              width: 160,
               padding: const EdgeInsets.all(10),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => FoodDetailScreen(food: food),
-                    ),
-                  );
-                },
+              decoration: BoxDecoration(
+                  color: controller.isLightTheme
+                      ? Colors.white
+                      : DarkThemeColor.primaryLight,
+                  borderRadius: const BorderRadius.all(Radius.circular(20))),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
