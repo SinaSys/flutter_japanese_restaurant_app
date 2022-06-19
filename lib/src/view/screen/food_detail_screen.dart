@@ -85,7 +85,7 @@ class FoodDetailScreen extends StatelessWidget {
                         RatingBar.builder(
                           itemPadding: EdgeInsets.zero,
                           itemSize: 20,
-                          initialRating: 3.1,
+                          initialRating: food.score,
                           minRating: 1,
                           direction: Axis.horizontal,
                           allowHalfRating: true,
@@ -100,6 +100,9 @@ class FoodDetailScreen extends StatelessWidget {
                         ),
                         const SizedBox(width: 15),
                         Text(food.score.toString(),
+                            style: Theme.of(context).textTheme.subtitle1),
+                        const SizedBox(width: 5),
+                        Text("(${food.voter})",
                             style: Theme.of(context).textTheme.subtitle1)
                       ],
                     ).fadeAnimation(0.4),
