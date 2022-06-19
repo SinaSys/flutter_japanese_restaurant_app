@@ -23,5 +23,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/apk/release/app-release.apk"
-          tag: v1.0.${{ github.run_number }}
+          tag: v1.1.0
           token: ${{ secrets.TOKEN }}
