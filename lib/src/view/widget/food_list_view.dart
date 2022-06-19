@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/view/widget/custom_page_route.dart';
 import 'package:get/get.dart';
 import '../../../core/app_color.dart';
 import '../../../core/app_style.dart';
@@ -29,11 +30,11 @@ class FoodListView extends StatelessWidget {
           Food food =
               isReversedList ? foods.reversed.toList()[index] : foods[index];
           return GestureDetector(
-            onTap: (){
+            onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (_) => FoodDetailScreen(food: food),
+                CustomPageRoute(
+                  child: FoodDetailScreen(food: food),
                 ),
               );
             },
