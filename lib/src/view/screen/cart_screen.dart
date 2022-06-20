@@ -206,7 +206,6 @@ class CartScreen extends StatelessWidget {
   }
 
 
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -220,14 +219,13 @@ class CartScreen extends StatelessWidget {
         title: "Empty cart",
         condition: controller.cartFood.isNotEmpty,
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              GetBuilder(
-                builder: (FoodController controller) {
-                  return cartListView(context);
-                },
-              )
-            ],
+          child:   SizedBox(
+            height: height*0.5,
+            child: GetBuilder(
+              builder: (FoodController controller) {
+                return cartListView(context);
+              },
+            ),
           ),
         ),
       ),
