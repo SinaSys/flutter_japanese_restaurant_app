@@ -1,5 +1,11 @@
 # flutter_japanese_restaurant_app
 
+<p align="center">
+  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_japanese_restaurant_app/Build%20&%20Release">
+  <img src="https://img.shields.io/github/v/release/SinaSys/flutter_japanese_restaurant_app?label=Release&logo=semantic-release">
+  <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_japanese_restaurant_app?label=Last%20commit">
+</p>
+
 Japanese restaurant app is a design implementation of [Japanese restaurant app](https://dribbble.com/shots/14752424-Japan-Restaurant-App-Food-App/attachments/6455673?mode=media) designed by [gandkurniawan](https://dribbble.com/gandkurniawan)
 
 ![](https://github.com/SinaSys/flutter_japanese_restaurant_app/blob/master/screenshots/japanese_restaurant_app_dark.png?raw=true)
@@ -18,6 +24,23 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://github.com/SinaSys/flutter_japanese_restaurant_app/blob/master/screenshots/favorite_screen_dark.png?raw=true)|![](https://github.com/SinaSys/flutter_japanese_restaurant_app/blob/master/screenshots/food_list_screen_dark.png?raw=true)|![](https://github.com/SinaSys/flutter_japanese_restaurant_app/blob/master/screenshots/food_detail_screen_dark.png?raw=true)|![](https://github.com/SinaSys/flutter_japanese_restaurant_app/blob/master/screenshots/cart_screen_dark.png?raw=true)
 
+
+## 🚀 Features :
+```
+• Dynamically change between light and dark theme
+• Bottom navigation animation when switch from one screen to another
+• Fade animation for food items in detail screen and list views
+• Delete single food item from cart by swipe item to right side
+• Automatically delete single item from cart by set its value to zero
+• Increase or Decrease quantity for each food item in cart screen
+• Display food list on the food list screen
+• Display Detail of each food on food detail screen
+• Real-time calculation of total price in the cart screen
+• Add desired food to the favorite screen
+• Select quantity for each item on detail screen
+• Filter foods by category
+• State management with GetX
+```
 
 
 
