@@ -46,7 +46,7 @@ class FoodController extends GetxController {
   calculateTotalPrice() {
     totalPrice.value = 5;
     for (var element in cartFood) {
-      totalPrice.value += element.quantity * element.price.toString().dropSign;
+      totalPrice.value += element.quantity * element.price;
     }
 
     subtotalPrice.value = 0;

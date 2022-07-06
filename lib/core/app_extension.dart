@@ -44,10 +44,6 @@ extension ListExtension on List<String> {
 }
 
 extension StringExtension on String {
-  double get dropSign {
-    return double.parse(replaceAll("\$", ""));
-  }
-
   String get toCapital => this[0].toUpperCase() + substring(1, length);
 }
 
