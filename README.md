@@ -50,7 +50,7 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
 • Add desired food to the favorite screen
 • Select quantity for each item on detail screen
 • Filter foods by category
-• State management with GetX
+• State management with GetX | Cubit
 ```
 
 ## Directory Structure (Cubit version)
@@ -148,7 +148,7 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
 I welcome and encourage all pull requests. It usually will take me within 48-72 hours to respond to
 any issue or request.
 
-  <br/>
+<br/>
 
 ## Dependencies
 |       Name      |        Cubit version         |        GetX version        |
@@ -157,11 +157,12 @@ any issue or request.
 | [GetX](https://pub.dev/packages/get)  | ✖️| ✔️|
 | [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️| ✖️|
 | [equatable](https://pub.dev/packages/equatable)  | ✔️| ✖️|
-| [smooth_page_indicator](https://pub.dev/packages/smooth_page_indicator)  | ✔️| ✔️|
-| [flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)  | ✔️| ✔️|
+| [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)  | ✔️| ✔️|
+| [badges](https://pub.dev/packages/badges)  | ✔️| ✔️|
+| [animations](https://pub.dev/packages/animations)  | ✔️|✔️|
 | [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️|✔️|
 
-  <br/>
+<br/>
 
 ## Created & Maintained By
 
