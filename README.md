@@ -1,5 +1,7 @@
 # flutter_japanese_restaurant_app
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2ebc97df65b0461ba42554a2626db9dd)](https://app.codacy.com/gh/SinaSys/flutter_japanese_restaurant_app?utm_source=github.com&utm_medium=referral&utm_content=SinaSys/flutter_japanese_restaurant_app&utm_campaign=Badge_Grade_Settings)
+
 <p align="center">
   <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_japanese_restaurant_app/Build%20&%20Release">
   <img src="https://img.shields.io/github/v/release/SinaSys/flutter_japanese_restaurant_app?label=Release&logo=semantic-release">
