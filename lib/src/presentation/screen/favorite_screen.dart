@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
-import 'package:flutter_japanese_restaurant_app/src/model/food.dart';
-import 'package:flutter_japanese_restaurant_app/src/view/widget/empty_widget.dart';
-import 'package:get/get.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
 import '../../../core/app_icon.dart';
-import '../../controller/food_controller.dart';
+import '../../business_logic/cubits/food/food_cubit.dart';
+import '../../business_logic/cubits/theme/theme_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-final FoodController controller = Get.put(FoodController());
+import '../widget/empty_widget.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final List<Food> favoriteFoods = context.watch<FoodCubit>().getFavoriteList;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -24,22 +26,22 @@ class FavoriteScreen extends StatelessWidget {
       body: EmptyWidget(
         type: EmptyWidgetType.favorite,
         title: "Empty favorite",
-        condition: controller.favoriteFood.isNotEmpty,
+        condition: favoriteFoods.isNotEmpty,
         child: ListView.separated(
           padding: const EdgeInsets.all(15),
-          itemCount: controller.favoriteFood.length,
+          itemCount: favoriteFoods.length,
           itemBuilder: (_, index) {
-            Food food = controller.favoriteFood[index];
+            Food food = favoriteFoods[index];
             return Card(
-              color: controller.isLightTheme
+              color: context.read<ThemeCubit>().isLightTheme
                   ? Colors.white
                   : DarkThemeColor.primaryLight,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
               ),
               child: ListTile(
-                title:
-                Text(food.name, style: Theme.of(context).textTheme.headline4),
+                title: Text(food.name,
+                    style: Theme.of(context).textTheme.headline4),
                 leading: Image.asset(food.image),
                 subtitle: Text(
                   food.description,

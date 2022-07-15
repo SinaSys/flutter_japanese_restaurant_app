@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_japanese_restaurant_app/src/controller/food_controller.dart';
-import 'package:flutter_japanese_restaurant_app/src/view/screen/home_screen.dart';
-import 'package:get/get.dart';
-
-
-final FoodController controller = Get.put(FoodController());
-
+import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/category/category_cubit.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/food/food_cubit.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/theme/theme_cubit.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/theme/theme_state.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_japanese_restaurant_app/src/presentation/screen/home_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -14,14 +13,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Obx((){
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: controller.theme.value,
-        home:  HomeScreen(),
-      );
-    });
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<FoodCubit>(
+          create: (context) => FoodCubit(),
+        ),
+        BlocProvider<ThemeCubit>(
+          create: (context) => ThemeCubit(),
+        ),
+        BlocProvider<CategoryCubit>(
+          create: (context) => CategoryCubit(),
+        ),
+      ],
+      child: BlocBuilder<ThemeCubit, ThemeState>(
+        builder: (context, state) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: state.theme,
+            home: HomeScreen(),
+          );
+        },
+      ),
+    );
   }
 }
-
-

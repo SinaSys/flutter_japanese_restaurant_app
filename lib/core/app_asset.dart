@@ -1,4 +1,4 @@
-class AppAsset{
+class AppAsset {
   const AppAsset._();
 
   static const sushi1 = "assets/images/sushi1.png";
@@ -17,6 +17,4 @@ class AppAsset{
   static const githubImage = "assets/images/github_pic.png";
   static const emptyCart = "assets/images/empty_cart.png";
   static const emptyFavorite = "assets/images/empty_favorite.png";
-
-
 }
