@@ -4,10 +4,9 @@ class CategoryState extends Equatable {
   final List<FoodCategory> foodCategories;
   final List<Food> foodList;
 
-  factory CategoryState.initial() {
-    return const CategoryState(
-        foodCategories: AppData.categories, foodList: AppData.foodItems);
-  }
+  const CategoryState.initial(
+      List<Food> foodList, List<FoodCategory> foodCategories)
+      : this(foodList: foodList, foodCategories: foodCategories);
 
   const CategoryState({
     required this.foodCategories,

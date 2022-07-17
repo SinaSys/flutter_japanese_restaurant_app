@@ -15,7 +15,6 @@ class FavoriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Food> favoriteFoods = context.watch<FoodCubit>().getFavoriteList;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(

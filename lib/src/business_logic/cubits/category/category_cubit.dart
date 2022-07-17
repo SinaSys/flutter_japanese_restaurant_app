@@ -1,16 +1,19 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_japanese_restaurant_app/core/app_data.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/model/food_category.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
 
 part 'category_state.dart';
 
 class CategoryCubit extends Cubit<CategoryState> {
-  CategoryCubit() : super(CategoryState.initial());
+  CategoryCubit({required this.repository})
+      : super(CategoryState.initial(
+            repository.getFoodList, repository.getCategories));
+
+  Repository repository;
 
   filterItemByCategory(FoodCategory category) {
-
     final List<FoodCategory> categories = state.foodCategories.map((element) {
       if (element == category) {
         return category.copyWith(isSelected: true);
@@ -18,14 +21,13 @@ class CategoryCubit extends Cubit<CategoryState> {
       return element.copyWith(isSelected: false);
     }).toList();
 
-     if (category.type == FoodType.all) {
-       emit(CategoryState(foodCategories: categories, foodList: state.foodList));
-     } else {
-       final List<Food> foodList =
-           AppData.foodItems.where((item) => item.type == category.type).toList();
-       emit(state.copyWith(foodList: foodList,foodCategories: categories));
-     }
-
+    if (category.type == FoodType.all) {
+      emit(CategoryState(foodCategories: categories, foodList: repository.getFoodList));
+    } else {
+      final List<Food> foodList = repository.getFoodList
+          .where((item) => item.type == category.type)
+          .toList();
+      emit(state.copyWith(foodList: foodList, foodCategories: categories));
+    }
   }
-
 }

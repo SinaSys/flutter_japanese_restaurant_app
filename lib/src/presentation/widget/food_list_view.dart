@@ -32,7 +32,7 @@ class FoodListView extends StatelessWidget {
               Navigator.push(
                 context,
                 CustomPageRoute(
-                  child: FoodDetailScreen(food: food, index: index),
+                  child: FoodDetailScreen(food: food),
                 ),
               );
             },

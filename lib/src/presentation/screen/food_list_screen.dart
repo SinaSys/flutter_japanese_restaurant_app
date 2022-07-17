@@ -61,6 +61,7 @@ class FoodListScreen extends StatelessWidget {
 
     final List<FoodCategory> categories =
         context.watch<CategoryCubit>().state.foodCategories;
+
     final List<Food> filteredFood =
         context.watch<CategoryCubit>().state.foodList;
 

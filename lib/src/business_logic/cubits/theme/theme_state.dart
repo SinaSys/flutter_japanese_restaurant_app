@@ -11,7 +11,7 @@ class ThemeState extends Equatable {
   });
 
   factory ThemeState.initial() {
-    return ThemeState(theme: AppThemes.appThemeData[AppTheme.lightTheme]!);
+    return ThemeState(theme: AppThemes.appThemeData[AppTheme.darkTheme]!);
   }
 
   @override

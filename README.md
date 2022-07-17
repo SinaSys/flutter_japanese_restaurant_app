@@ -17,7 +17,7 @@ designed by [gandkurniawan](https://dribbble.com/gandkurniawan)
   <br/>
 
 ## GetX | Cubit 
-There are two different implementations : 1 : GetX version , 2: Cubit version <br/>
+There are two different implementations: 1: GetX version , 2: Cubit version <br/>
 • You can access Getx version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/master) <br/>
 • You can access Cubit version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/cubit) <br/>
 
@@ -59,36 +59,38 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
 📂lib
  │───main.dart  
  │───📂core  
- |   │──app_asset.dart
- |   │──app_color.dart
- |   │──app_data.dart
- |   │──app_icon.dart
- |   │──app_style.dart
- |   │──app_theme.dart
- |   └──app_extension.dart
+ │   │──app_asset.dart
+ │   │──app_color.dart
+ │   │──app_data.dart
+ │   │──app_icon.dart
+ │   │──app_style.dart
+ │   │──app_theme.dart
+ │   └──app_extension.dart
  └───📂src
      │────📂data
-     │    └───📂model
-     │        │──bottom_navigation_item.dart
-     │        │──food.dart
-     │        └──food_category.dart
+     │    │───📂model
+     │    │   |──bottom_navigation_item.dart
+     │    │   |──food.dart
+     │    │   └──food_category.dart
+     │    │───📂repository
+     │    │   └──repository.dart
      └────📂presentation
-     |    │───📂screen
-     |    |   |──cart_screen.dart
-     |    |   |──favorite_screen.dart
-     |    |   |──food_detail_screen.dart
-     |    |   |──food_list_screen.dart
-     |    |   |──home_screen.dart
-     |    |   └──profile_screen.dart
-     |    │───📂widget
-     │    |   |──counter_button.dart
-     │    |   |──custom_page_route.dart
-     │    |   |──empty_widget.dart
-     │    |   |──fade_animation.dart
-     |    |   └──food_list_view.dart
+     │    │───📂screen
+     │    │   |──cart_screen.dart
+     │    │   |──favorite_screen.dart
+     │    │   |──food_detail_screen.dart
+     │    │   |──food_list_screen.dart
+     │    │   |──home_screen.dart
+     │    │   └──profile_screen.dart
+     │    │───📂widget
+     │    │   |──counter_button.dart
+     │    │   |──custom_page_route.dart
+     │    │   |──empty_widget.dart
+     │    │   └──food_list_view.dart
      │    │───📂animation
-     │    |   |──page_transition.dart
-     │    |   └──scale_animation.dart
+     │    │   |──fade_animation.dart
+     │    │   |──page_transition.dart
+     │    │   └──scale_animation.dart
      └────📂business_logic
           └───📂cubits
               │───📂food

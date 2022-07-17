@@ -1,13 +1,16 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_japanese_restaurant_app/core/app_data.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
 
 part 'food_state.dart';
 
 class FoodCubit extends Cubit<FoodState> {
-  FoodCubit() : super(FoodState.initial());
+  FoodCubit({required this.repository})
+      : super(FoodState.initial(repository.getFoodList));
+
+  Repository repository;
 
   void increaseQuantity(Food food) {
     int index = state.foodList.getIndex(food);

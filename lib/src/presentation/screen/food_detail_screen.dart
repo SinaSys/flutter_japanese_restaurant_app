@@ -12,11 +12,10 @@ import '../widget/counter_button.dart';
 import '../animation/scale_animation.dart';
 
 class FoodDetailScreen extends StatelessWidget {
-  const FoodDetailScreen({Key? key, required this.food, required this.index})
+  const FoodDetailScreen({Key? key, required this.food})
       : super(key: key);
 
   final Food food;
-  final int index;
 
   PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
@@ -51,7 +50,7 @@ class FoodDetailScreen extends StatelessWidget {
       return FloatingActionButton(
         elevation: 0.0,
         backgroundColor: LightThemeColor.accent,
-        child: foodList[index].isFavorite
+        child: foodList[foodList.getIndex(food)].isFavorite
             ? const Icon(AppIcon.heart)
             : const Icon(AppIcon.outlinedHeart),
         onPressed: onPressed,
@@ -62,7 +61,7 @@ class FoodDetailScreen extends StatelessWidget {
       appBar: _appBar(context),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: fab(
-        () => context.read<FoodCubit>().isFavorite(foodList[index]),
+        () => context.read<FoodCubit>().isFavorite(foodList[foodList.getIndex(food)]),
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
@@ -131,7 +130,9 @@ class FoodDetailScreen extends StatelessWidget {
                                   .read<FoodCubit>()
                                   .decreaseQuantity(food),
                               label: Text(
-                                state.foodList[food.id - 1].quantity.toString(),
+                                state.foodList[state.foodList.getIndex(food)]
+                                    .quantity
+                                    .toString(),
                                 style: Theme.of(context).textTheme.headline1,
                               ),
                             );

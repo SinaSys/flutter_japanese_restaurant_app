@@ -7,7 +7,7 @@ class FoodState extends Equatable {
     required this.foodList,
   });
 
-  factory FoodState.initial() => const FoodState(foodList: AppData.foodItems);
+  const FoodState.initial(List<Food> foodList) : this(foodList: foodList);
 
   @override
   List<Object?> get props => [foodList];
