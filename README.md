@@ -17,7 +17,7 @@ designed by [gandkurniawan](https://dribbble.com/gandkurniawan)
 
   <br/>
 
-## GetX | Cubit 
+## Cubit | Bloc | GetX 
 There are three different implementations: 1: Bloc version, 2: Cubit version, 3: GetX version <br/>
 • You can access Bloc version from ```bloc branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/bloc) <br/>
 • You can access Cubit version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/cubit) <br/>
@@ -97,15 +97,15 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
      └────📂business_logic
           └───📂bloc
               │───📂food
-              │   |──food_cubit.dart
+              │   |──food_bloc.dart
               │   └──food_state.dart
               │   └──food_event.dart
               └───📂category
-              │    |──category_cubit.dart
+              │    |──category_bloc.dart
               │    └──category_state.dart
               │    └──category_event.dart
               └───📂theme
-                   |──theme_cubit.dart
+                   |──theme_bloc.dart
                    └──theme_state.dart
                    └──theme_event.dart
 ```
