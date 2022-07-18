@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/food/food_bloc.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
 import '../../../core/app_icon.dart';
-import '../../business_logic/cubits/food/food_cubit.dart';
-import '../../business_logic/cubits/theme/theme_cubit.dart';
+import '../../business_logic/blocs/theme/theme_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../widget/empty_widget.dart';
@@ -14,7 +14,7 @@ class FavoriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Food> favoriteFoods = context.watch<FoodCubit>().getFavoriteList;
+    final List<Food> favoriteFoods = context.watch<FoodBloc>().getFavoriteList;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -32,7 +32,7 @@ class FavoriteScreen extends StatelessWidget {
           itemBuilder: (_, index) {
             Food food = favoriteFoods[index];
             return Card(
-              color: context.read<ThemeCubit>().isLightTheme
+              color: context.read<ThemeBloc>().isLightTheme
                   ? Colors.white
                   : DarkThemeColor.primaryLight,
               shape: RoundedRectangleBorder(

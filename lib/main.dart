@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/category/category_cubit.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/food/food_cubit.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/theme/theme_cubit.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/theme/theme_state.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/category/category_bloc.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/food/food_bloc.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/theme/theme_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
 import 'package:flutter_japanese_restaurant_app/src/presentation/screen/home_screen.dart';
@@ -18,19 +17,19 @@ class MyApp extends StatelessWidget {
       create: (context) => Repository(),
       child: MultiBlocProvider(
         providers: [
-          BlocProvider<FoodCubit>(
+          BlocProvider<FoodBloc>(
             create: (context) =>
-                FoodCubit(repository: context.read<Repository>()),
+                FoodBloc(repository: context.read<Repository>()),
           ),
-          BlocProvider<CategoryCubit>(
+          BlocProvider<CategoryBloc>(
             create: (context) =>
-                CategoryCubit(repository: context.read<Repository>()),
+                CategoryBloc(repository: context.read<Repository>()),
           ),
-          BlocProvider<ThemeCubit>(
-            create: (context) => ThemeCubit(),
+          BlocProvider<ThemeBloc>(
+            create: (context) => ThemeBloc(),
           ),
         ],
-        child: BlocBuilder<ThemeCubit, ThemeState>(
+        child: BlocBuilder<ThemeBloc, ThemeState>(
           builder: (context, state) {
             return MaterialApp(
               debugShowCheckedModeBanner: false,

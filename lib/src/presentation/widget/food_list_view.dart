@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/theme/theme_bloc.dart';
 import '../../../core/app_color.dart';
 import '../../../core/app_style.dart';
-import '../../business_logic/cubits/theme/theme_cubit.dart';
 import '../../data/model/food.dart';
 import '../widget/custom_page_route.dart';
 import '../screen/food_detail_screen.dart';
@@ -40,7 +40,7 @@ class FoodListView extends StatelessWidget {
               width: 160,
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: context.read<ThemeCubit>().isLightTheme
+                  color: context.read<ThemeBloc>().isLightTheme
                       ? Colors.white
                       : DarkThemeColor.primaryLight,
                   borderRadius: const BorderRadius.all(Radius.circular(20))),

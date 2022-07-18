@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/food/food_bloc.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/theme/theme_bloc.dart';
 import '../../../core/app_style.dart';
-import '../../business_logic/cubits/food/food_cubit.dart';
-import '../../business_logic/cubits/theme/theme_cubit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../data/model/food.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,8 +27,8 @@ class CartScreen extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    final List<Food> cartFood = context.watch<FoodCubit>().getCartList;
-    final double totalPrice = context.read<FoodCubit>().getTotalPrice;
+    final List<Food> cartFood = context.watch<FoodBloc>().getCartList;
+    final double totalPrice = context.read<FoodBloc>().getTotalPrice;
 
     Widget cartListView() {
       return ListView.separated(
@@ -39,7 +39,7 @@ class CartScreen extends StatelessWidget {
           return Dismissible(
             onDismissed: (direction) {
               if (direction == DismissDirection.startToEnd) {
-                context.read<FoodCubit>().removeItem(cartFood[index]);
+                context.read<FoodBloc>().add(RemoveItemEvent(cartFood[index]));
               }
             },
             key: Key(cartFood[index].name),
@@ -60,7 +60,7 @@ class CartScreen extends StatelessWidget {
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: context.read<ThemeCubit>().isLightTheme
+                color: context.read<ThemeBloc>().isLightTheme
                     ? Colors.white
                     : DarkThemeColor.primaryLight,
               ),
@@ -89,11 +89,11 @@ class CartScreen extends StatelessWidget {
                     children: [
                       CounterButton(
                         onIncrementSelected: () => context
-                            .read<FoodCubit>()
-                            .increaseQuantity(cartFood[index]),
+                            .read<FoodBloc>()
+                            .add(IncreaseQuantityEvent(cartFood[index])),
                         onDecrementSelected: () => context
-                            .read<FoodCubit>()
-                            .decreaseQuantity(cartFood[index]),
+                            .read<FoodBloc>()
+                            .add(DecreaseQuantityEvent(cartFood[index])),
                         size: const Size(24, 24),
                         padding: 0,
                         label: Text(
@@ -102,7 +102,7 @@ class CartScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "\$${context.read<FoodCubit>().pricePerEachItem(cartFood[index])}",
+                        "\$${context.read<FoodBloc>().pricePerEachItem(cartFood[index])}",
                         style: h2Style.copyWith(color: LightThemeColor.accent),
                       )
                     ],
@@ -140,7 +140,8 @@ class CartScreen extends StatelessWidget {
                         children: [
                           Text("Subtotal",
                               style: Theme.of(context).textTheme.headline5),
-                          Text("\$${totalPrice - 5}",style:Theme.of(context).textTheme.headline2),
+                          Text("\$${totalPrice - 5}",
+                              style: Theme.of(context).textTheme.headline2),
                         ],
                       ),
                     ),

@@ -6,14 +6,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../../../core/app_color.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../business_logic/cubits/food/food_cubit.dart';
-import '../../business_logic/cubits/theme/theme_cubit.dart';
+import '../../business_logic/blocs/food/food_bloc.dart';
+import '../../business_logic/blocs/theme/theme_bloc.dart';
 import '../widget/counter_button.dart';
 import '../animation/scale_animation.dart';
 
 class FoodDetailScreen extends StatelessWidget {
-  const FoodDetailScreen({Key? key, required this.food})
-      : super(key: key);
+  const FoodDetailScreen({Key? key, required this.food}) : super(key: key);
 
   final Food food;
 
@@ -22,7 +21,7 @@ class FoodDetailScreen extends StatelessWidget {
       title: Text(
         "Food Detail Screen",
         style: TextStyle(
-            color: context.read<ThemeCubit>().isLightTheme
+            color: context.read<ThemeBloc>().isLightTheme
                 ? Colors.black
                 : Colors.white),
       ),
@@ -44,7 +43,7 @@ class FoodDetailScreen extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    final List<Food> foodList = context.watch<FoodCubit>().state.foodList;
+    final List<Food> foodList = context.watch<FoodBloc>().state.foodList;
 
     Widget fab(VoidCallback onPressed) {
       return FloatingActionButton(
@@ -60,16 +59,16 @@ class FoodDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: _appBar(context),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-      floatingActionButton: fab(
-        () => context.read<FoodCubit>().isFavorite(foodList[foodList.getIndex(food)]),
-      ),
+      floatingActionButton: fab(() => context
+          .read<FoodBloc>()
+          .add(FavoriteItemEvent(foodList[foodList.getIndex(food)]))),
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
         child: SizedBox(
           height: height * 0.5,
           child: Container(
             decoration: BoxDecoration(
-              color: context.read<ThemeCubit>().isLightTheme
+              color: context.read<ThemeBloc>().isLightTheme
                   ? Colors.white
                   : DarkThemeColor.primaryLight,
               borderRadius: const BorderRadius.only(
@@ -120,15 +119,15 @@ class FoodDetailScreen extends StatelessWidget {
                               .headline1
                               ?.copyWith(color: LightThemeColor.accent),
                         ),
-                        BlocBuilder<FoodCubit, FoodState>(
+                        BlocBuilder<FoodBloc, FoodState>(
                           builder: (context, state) {
                             return CounterButton(
                               onIncrementSelected: () => context
-                                  .read<FoodCubit>()
-                                  .increaseQuantity(food),
+                                  .read<FoodBloc>()
+                                  .add(IncreaseQuantityEvent(food)),
                               onDecrementSelected: () => context
-                                  .read<FoodCubit>()
-                                  .decreaseQuantity(food),
+                                  .read<FoodBloc>()
+                                  .add(DecreaseQuantityEvent(food)),
                               label: Text(
                                 state.foodList[state.foodList.getIndex(food)]
                                     .quantity
@@ -156,8 +155,9 @@ class FoodDetailScreen extends StatelessWidget {
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: width * 0.1),
                         child: ElevatedButton(
-                          onPressed: () =>
-                              context.read<FoodCubit>().addToCart(food),
+                          onPressed: () => context
+                              .read<FoodBloc>()
+                              .add(AddToCartEvent(food)),
                           child: const Text("Add to cart"),
                         ),
                       ),

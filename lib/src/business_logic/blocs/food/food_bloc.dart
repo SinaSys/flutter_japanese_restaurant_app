@@ -2,20 +2,29 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
-import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
+
+import '../../../data/repository/repository.dart';
+
+part 'food_event.dart';
 
 part 'food_state.dart';
 
-class FoodCubit extends Cubit<FoodState> {
-  FoodCubit({required this.repository})
-      : super(FoodState.initial(repository.getFoodList));
+class FoodBloc extends Bloc<FoodEvent, FoodState> {
+  FoodBloc({required this.repository})
+      : super(FoodState.initial(repository.getFoodList)) {
+    on<IncreaseQuantityEvent>(_increaseQuantity);
+    on<DecreaseQuantityEvent>(_decreaseQuantity);
+    on<RemoveItemEvent>(_removeItem);
+    on<FavoriteItemEvent>(_isFavorite);
+    on<AddToCartEvent>(_addToCart);
+  }
 
   Repository repository;
 
-  void increaseQuantity(Food food) {
-    int index = state.foodList.getIndex(food);
+  void _increaseQuantity(IncreaseQuantityEvent event, Emitter<FoodState> emit) {
+    int index = state.foodList.getIndex(event.food);
     final List<Food> foodList = state.foodList.map((element) {
-      if (element.id == food.id) {
+      if (element.id == event.food.id) {
         return state.foodList[index]
             .copyWith(quantity: state.foodList[index].quantity + 1);
       }
@@ -25,16 +34,16 @@ class FoodCubit extends Cubit<FoodState> {
     emit(FoodState(foodList: foodList));
   }
 
-  void decreaseQuantity(Food food) {
-    int index = state.foodList.getIndex(food);
+  void _decreaseQuantity(DecreaseQuantityEvent event, Emitter<FoodState> emit) {
+    int index = state.foodList.getIndex(event.food);
 
     final List<Food> foodList = state.foodList.map((element) {
-      if (element.id == food.id && element.quantity > 1) {
+      if (element.id == event.food.id && element.quantity > 1) {
         return state.foodList[index]
             .copyWith(quantity: state.foodList[index].quantity - 1);
       }
       //for Item quantity less than zero this statement will be called
-      if (element.id == food.id) {
+      if (element.id == event.food.id) {
         //Remove item from cart
         return state.foodList[index].copyWith(cart: false);
       }
@@ -43,10 +52,10 @@ class FoodCubit extends Cubit<FoodState> {
     emit(FoodState(foodList: foodList));
   }
 
-  void removeItem(Food food) {
+  void _removeItem(RemoveItemEvent event, Emitter<FoodState> emit) {
     final List<Food> foodList = state.foodList.map((element) {
-      if (element.id == food.id) {
-        return food.copyWith(cart: false);
+      if (element.id == event.food.id) {
+        return event.food.copyWith(cart: false);
       }
       return element;
     }).toList();
@@ -54,22 +63,23 @@ class FoodCubit extends Cubit<FoodState> {
     emit(FoodState(foodList: foodList));
   }
 
-  void isFavorite(Food food) {
-    int index = state.foodList.getIndex(food);
+  void _isFavorite(FavoriteItemEvent event, Emitter<FoodState> emit) {
+    int index = state.foodList.getIndex(event.food);
     final List<Food> foodList = state.foodList.map((element) {
-      if (element.id == food.id) {
-        return food.copyWith(isFavorite: !state.foodList[index].isFavorite);
+      if (element.id == event.food.id) {
+        return event.food
+            .copyWith(isFavorite: !state.foodList[index].isFavorite);
       }
       return element;
     }).toList();
     emit(FoodState(foodList: foodList));
   }
 
-  void addToCart(Food food) {
-    int index = state.foodList.getIndex(food);
+  void _addToCart(AddToCartEvent event, Emitter<FoodState> emit) {
+    int index = state.foodList.getIndex(event.food);
 
     final List<Food> cartFood = state.foodList.map((element) {
-      if (element.id == food.id) {
+      if (element.id == event.food.id) {
         return state.foodList[index].copyWith(cart: true);
       }
       return element;

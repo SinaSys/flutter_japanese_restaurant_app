@@ -1,4 +1,4 @@
-part of 'category_cubit.dart';
+part of 'category_bloc.dart';
 
 class CategoryState extends Equatable {
   final List<FoodCategory> foodCategories;

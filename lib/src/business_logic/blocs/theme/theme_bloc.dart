@@ -1,11 +1,19 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+
 import '../../../../core/app_theme.dart';
-import 'theme_state.dart';
 
-class ThemeCubit extends Cubit<ThemeState> {
-  ThemeCubit() : super(ThemeState.initial());
+part 'theme_event.dart';
 
-  switchTheme() {
+part 'theme_state.dart';
+
+class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
+  ThemeBloc() : super(ThemeState.initial()) {
+    on<ThemeEvent>(_switchTheme);
+  }
+
+  void _switchTheme(ThemeEvent event, Emitter<ThemeState> emit) {
     if (state.theme == AppThemes.appThemeData[AppTheme.lightTheme]) {
       emit(state.copyWith(theme: AppThemes.appThemeData[AppTheme.darkTheme]!));
     } else {

@@ -12,8 +12,12 @@ class ProfileScreen extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(30),
-              child: Image.asset(AppAsset.profileImage,width: 300,)),
-           Text(
+            child: Image.asset(
+              AppAsset.profileImage,
+              width: 300,
+            ),
+          ),
+          Text(
             "Hello Sina!",
             style: Theme.of(context).textTheme.headline1,
           ),
