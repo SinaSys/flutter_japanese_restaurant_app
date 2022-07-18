@@ -133,15 +133,15 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
      └────📂business_logic
           └───📂bloc
               │───📂food
-              │   |──food_cubit.dart
+              │   |──food_bloc.dart
               │   └──food_state.dart
               │   └──food_event.dart
               └───📂category
-              │    |──category_cubit.dart
+              │    |──category_bloc.dart
               │    └──category_state.dart
               │    └──category_event.dart
               └───📂theme
-                   |──theme_cubit.dart
+                   |──theme_bloc.dart
                    └──theme_state.dart
                    └──theme_event.dart
 ```
