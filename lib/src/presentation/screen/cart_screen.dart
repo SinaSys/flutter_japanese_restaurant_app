@@ -140,7 +140,8 @@ class CartScreen extends StatelessWidget {
                         children: [
                           Text("Subtotal",
                               style: Theme.of(context).textTheme.headline5),
-                          Text("\$${totalPrice - 5}",style:Theme.of(context).textTheme.headline2),
+                          Text("\$${totalPrice - 5}",
+                              style: Theme.of(context).textTheme.headline2),
                         ],
                       ),
                     ),

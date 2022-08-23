@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart' show immutable;
 import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/model/food_category.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
@@ -22,7 +23,8 @@ class CategoryCubit extends Cubit<CategoryState> {
     }).toList();
 
     if (category.type == FoodType.all) {
-      emit(CategoryState(foodCategories: categories, foodList: repository.getFoodList));
+      emit(CategoryState(
+          foodCategories: categories, foodList: repository.getFoodList));
     } else {
       final List<Food> foodList = repository.getFoodList
           .where((item) => item.type == category.type)

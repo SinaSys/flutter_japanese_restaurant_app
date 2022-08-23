@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_japanese_restaurant_app/Analysis%20&%20Build/cubit?label=CI&logo=github">
   <img src="https://img.shields.io/github/v/release/SinaSys/flutter_japanese_restaurant_app?label=Release&logo=semantic-release">
-  <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_japanese_restaurant_app?label=Last%20commit">
+  <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_japanese_restaurant_app/cubit">
 </p>
 
 Japanese restaurant app is a design implementation
@@ -15,13 +15,15 @@ designed by [gandkurniawan](https://dribbble.com/gandkurniawan)
 
 
 
+
   <br/>
 
-## Cubit | Bloc | GetX
-There are three different implementations: 1: Cubit version, 2: Bloc version, 3: GetX version <br/>
+## Cubit | Bloc | GetX | Provider 
+There are four different implementations: 1: Provider version, 2: Cubit version, 3: Bloc version, 4: GetX version <br/>
 • You can access Cubit version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/cubit) <br/>
 • You can access Bloc version from ```bloc branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/bloc) <br/>
 • You can access GetX version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/master) <br/>
+• You can access Provider version from ```provider branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/provider) <br/>
 
  <br/>
 
@@ -52,7 +54,7 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
 • Add desired food to the favorite screen
 • Select quantity for each item on detail screen
 • Filter foods by category
-• State management with GetX | Cubit
+• State management with GetX | Cubit | Bloc | Provider
 ```
 
 ## Directory Structure (Cubit version)
@@ -201,6 +203,59 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
 
 
 
+## Directory Structure (Provider version)
+
+```
+📂lib
+ │───main.dart  
+ │───📂core  
+ │   │──app_asset.dart
+ │   │──app_color.dart
+ │   │──app_data.dart
+ │   │──app_icon.dart
+ │   │──app_style.dart
+ │   │──app_theme.dart
+ │   └──app_extension.dart
+ └───📂src
+     │────📂data
+     │    │───📂model
+     │    │   |──bottom_navigation_item.dart
+     │    │   |──food.dart
+     │    │   └──food_category.dart
+     │    │───📂repository
+     │    │   └──repository.dart
+     └────📂presentation
+     │    │───📂screen
+     │    │   |──cart_screen.dart
+     │    │   |──favorite_screen.dart
+     │    │   |──food_detail_screen.dart
+     │    │   |──food_list_screen.dart
+     │    │   |──home_screen.dart
+     │    │   └──profile_screen.dart
+     │    │───📂widget
+     │    │   |──counter_button.dart
+     │    │   |──custom_page_route.dart
+     │    │   |──empty_widget.dart
+     │    │   └──food_list_view.dart
+     │    │───📂animation
+     │    │   |──fade_animation.dart
+     │    │   |──page_transition.dart
+     │    │   └──scale_animation.dart
+     └────📂business_logic
+          └───📂provider
+              │───📂food
+              │   |──food_provider.dart
+              │   └──food_state.dart
+              └───📂category
+              │    |──category_provider.dart
+              │    └──category_state.dart
+              └───📂theme
+                   |──theme_provider.dart
+                   └──theme_state.dart
+```
+
+
+
 ## Pull Requests
 
 I welcome and encourage all pull requests. It usually will take me within 48-72 hours to respond to
@@ -209,16 +264,17 @@ any issue or request.
   <br/>
 
 ## Dependencies
-|       Name      |  Bloc version                |         Cubit version          |        GetX version         |
-| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |
-| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    |
-| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    |
-| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ |
-| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ |
-| [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)  | ✔️  | ✔️ | ✔️ |
-| [badges](https://pub.dev/packages/badges)  | ✔️  | ✔️ |✔️ |
-| [animations](https://pub.dev/packages/animations)  | ✔️  | ✔️ |✔️ |
-| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |
+|       Name      |    Cubit  <br/> version      |       Bloc <br/> version       |      GetX <br/> version     |    provider <br/> version   |
+| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |  :------------------------: | 
+| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    | ✖️    |
+| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    |✖️    |
+| [provider](https://pub.dev/packages/provider)  | ✖️  |  ✖️  | ✖️    | ✔️    | 
+| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ |✔️    | 
+| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ |✔️    | 
+| [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)  | ✔️  | ✔️ | ✔️ |✔️    | 
+| [badges](https://pub.dev/packages/badges)  | ✔️  | ✔️ |✔️ |✔️    | 
+| [animations](https://pub.dev/packages/animations)  | ✔️  | ✔️ |✔️ |✔️    | 
+| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |✔️    | 
 
   <br/>
 

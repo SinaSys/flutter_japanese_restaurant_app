@@ -12,8 +12,7 @@ import '../widget/counter_button.dart';
 import '../animation/scale_animation.dart';
 
 class FoodDetailScreen extends StatelessWidget {
-  const FoodDetailScreen({Key? key, required this.food})
-      : super(key: key);
+  const FoodDetailScreen({Key? key, required this.food}) : super(key: key);
 
   final Food food;
 
@@ -61,7 +60,9 @@ class FoodDetailScreen extends StatelessWidget {
       appBar: _appBar(context),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: fab(
-        () => context.read<FoodCubit>().isFavorite(foodList[foodList.getIndex(food)]),
+        () => context
+            .read<FoodCubit>()
+            .isFavorite(foodList[foodList.getIndex(food)]),
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
