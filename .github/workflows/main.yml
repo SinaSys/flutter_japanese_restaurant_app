@@ -20,8 +20,8 @@ jobs:
       - run: flutter analyze
       - run: flutter build apk
       - name: Push to Releases
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "build/app/outputs/apk/release/app-release.apk"
-          tag: v1.1.2
-          token: ${{ secrets.TOKEN }}
+#        uses: ncipollo/release-action@v1
+#        with:
+#          artifacts: "build/app/outputs/apk/release/app-release.apk"
+#          tag: v1.1.2
+#          token: ${{ secrets.TOKEN }}
