@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/food/food_provider.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/theme/theme_provider.dart';
 import '../../../core/app_style.dart';
-import '../../business_logic/cubits/food/food_cubit.dart';
-import '../../business_logic/cubits/theme/theme_cubit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../data/model/food.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import '../widget/empty_widget.dart';
 import '../widget/counter_button.dart';
+import 'package:provider/provider.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -27,8 +27,8 @@ class CartScreen extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    final List<Food> cartFood = context.watch<FoodCubit>().getCartList;
-    final double totalPrice = context.read<FoodCubit>().getTotalPrice;
+    final List<Food> cartFood = context.watch<FoodProvider>().getCartList;
+    final double totalPrice = context.read<FoodProvider>().getTotalPrice;
 
     Widget cartListView() {
       return ListView.separated(
@@ -39,7 +39,7 @@ class CartScreen extends StatelessWidget {
           return Dismissible(
             onDismissed: (direction) {
               if (direction == DismissDirection.startToEnd) {
-                context.read<FoodCubit>().removeItem(cartFood[index]);
+                context.read<FoodProvider>().removeItem(cartFood[index]);
               }
             },
             key: Key(cartFood[index].name),
@@ -60,7 +60,7 @@ class CartScreen extends StatelessWidget {
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: context.read<ThemeCubit>().isLightTheme
+                color: context.read<ThemeProvider>().isLightTheme
                     ? Colors.white
                     : DarkThemeColor.primaryLight,
               ),
@@ -89,10 +89,10 @@ class CartScreen extends StatelessWidget {
                     children: [
                       CounterButton(
                         onIncrementSelected: () => context
-                            .read<FoodCubit>()
+                            .read<FoodProvider>()
                             .increaseQuantity(cartFood[index]),
                         onDecrementSelected: () => context
-                            .read<FoodCubit>()
+                            .read<FoodProvider>()
                             .decreaseQuantity(cartFood[index]),
                         size: const Size(24, 24),
                         padding: 0,
@@ -102,7 +102,7 @@ class CartScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "\$${context.read<FoodCubit>().pricePerEachItem(cartFood[index])}",
+                        "\$${context.read<FoodProvider>().pricePerEachItem(cartFood[index])}",
                         style: h2Style.copyWith(color: LightThemeColor.accent),
                       )
                     ],
@@ -124,10 +124,11 @@ class CartScreen extends StatelessWidget {
           height: height * 0.32,
           child: Container(
             decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30),
-              topRight: Radius.circular(30),
-            )),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(30),
               child: SingleChildScrollView(
@@ -140,7 +141,8 @@ class CartScreen extends StatelessWidget {
                         children: [
                           Text("Subtotal",
                               style: Theme.of(context).textTheme.headline5),
-                          Text("\$${totalPrice - 5}",style:Theme.of(context).textTheme.headline2),
+                          Text("\$${totalPrice - 5}",
+                              style: Theme.of(context).textTheme.headline2),
                         ],
                       ),
                     ),

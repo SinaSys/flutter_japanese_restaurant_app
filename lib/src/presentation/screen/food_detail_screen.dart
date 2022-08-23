@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_icon.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/food/food_provider.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/theme/theme_provider.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../../../core/app_color.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../business_logic/cubits/food/food_cubit.dart';
-import '../../business_logic/cubits/theme/theme_cubit.dart';
 import '../widget/counter_button.dart';
 import '../animation/scale_animation.dart';
+import 'package:provider/provider.dart';
 
 class FoodDetailScreen extends StatelessWidget {
-  const FoodDetailScreen({Key? key, required this.food})
-      : super(key: key);
+  const FoodDetailScreen({Key? key, required this.food}) : super(key: key);
 
   final Food food;
 
@@ -22,7 +21,7 @@ class FoodDetailScreen extends StatelessWidget {
       title: Text(
         "Food Detail Screen",
         style: TextStyle(
-            color: context.read<ThemeCubit>().isLightTheme
+            color: context.read<ThemeProvider>().isLightTheme
                 ? Colors.black
                 : Colors.white),
       ),
@@ -44,7 +43,7 @@ class FoodDetailScreen extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    final List<Food> foodList = context.watch<FoodCubit>().state.foodList;
+    final List<Food> foodList = context.watch<FoodProvider>().state.foodList;
 
     Widget fab(VoidCallback onPressed) {
       return FloatingActionButton(
@@ -61,7 +60,9 @@ class FoodDetailScreen extends StatelessWidget {
       appBar: _appBar(context),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: fab(
-        () => context.read<FoodCubit>().isFavorite(foodList[foodList.getIndex(food)]),
+        () => context
+            .read<FoodProvider>()
+            .isFavorite(foodList[foodList.getIndex(food)]),
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
@@ -69,7 +70,7 @@ class FoodDetailScreen extends StatelessWidget {
           height: height * 0.5,
           child: Container(
             decoration: BoxDecoration(
-              color: context.read<ThemeCubit>().isLightTheme
+              color: context.read<ThemeProvider>().isLightTheme
                   ? Colors.white
                   : DarkThemeColor.primaryLight,
               borderRadius: const BorderRadius.only(
@@ -120,23 +121,19 @@ class FoodDetailScreen extends StatelessWidget {
                               .headline1
                               ?.copyWith(color: LightThemeColor.accent),
                         ),
-                        BlocBuilder<FoodCubit, FoodState>(
-                          builder: (context, state) {
-                            return CounterButton(
-                              onIncrementSelected: () => context
-                                  .read<FoodCubit>()
-                                  .increaseQuantity(food),
-                              onDecrementSelected: () => context
-                                  .read<FoodCubit>()
-                                  .decreaseQuantity(food),
-                              label: Text(
-                                state.foodList[state.foodList.getIndex(food)]
-                                    .quantity
-                                    .toString(),
-                                style: Theme.of(context).textTheme.headline1,
-                              ),
-                            );
-                          },
+                        CounterButton(
+                          onIncrementSelected: () => context
+                              .read<FoodProvider>()
+                              .increaseQuantity(food),
+                          onDecrementSelected: () => context
+                              .read<FoodProvider>()
+                              .decreaseQuantity(food),
+                          label: Text(
+                            foodList[foodList.getIndex(food)]
+                                .quantity
+                                .toString(),
+                            style: Theme.of(context).textTheme.headline1,
+                          ),
                         )
                       ],
                     ).fadeAnimation(0.6),
@@ -157,7 +154,7 @@ class FoodDetailScreen extends StatelessWidget {
                         padding: EdgeInsets.symmetric(horizontal: width * 0.1),
                         child: ElevatedButton(
                           onPressed: () =>
-                              context.read<FoodCubit>().addToCart(food),
+                              context.read<FoodProvider>().addToCart(food),
                           child: const Text("Add to cart"),
                         ),
                       ),

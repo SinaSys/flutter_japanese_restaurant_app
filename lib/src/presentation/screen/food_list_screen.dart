@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/category/category_cubit.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/food/food_provider.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/theme/theme_provider.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/model/food_category.dart';
-import '../../business_logic/cubits/food/food_cubit.dart';
-import '../../business_logic/cubits/theme/theme_cubit.dart';
+import '../../business_logic/provider/category/category_provider.dart';
 import '../widget/food_list_view.dart';
 import 'package:badges/badges.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 
 class FoodListScreen extends StatelessWidget {
   const FoodListScreen({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class FoodListScreen extends StatelessWidget {
     return AppBar(
       leading: IconButton(
         icon: const FaIcon(FontAwesomeIcons.dice),
-        onPressed: () => context.read<ThemeCubit>().switchTheme(),
+        onPressed: () => context.read<ThemeProvider>().switchTheme(),
       ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -57,13 +57,13 @@ class FoodListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Food> foodList = context.watch<FoodCubit>().state.foodList;
+    final List<Food> foodList = context.watch<FoodProvider>().state.foodList;
 
     final List<FoodCategory> categories =
-        context.watch<CategoryCubit>().state.foodCategories;
+        context.watch<CategoryProvider>().state.foodCategories;
 
     final List<Food> filteredFood =
-        context.watch<CategoryCubit>().state.foodList;
+        context.watch<CategoryProvider>().state.foodList;
 
     return Scaffold(
       appBar: _appBar(context),
@@ -93,7 +93,7 @@ class FoodListScreen extends StatelessWidget {
                       FoodCategory category = categories[index];
                       return GestureDetector(
                         onTap: () => context
-                            .read<CategoryCubit>()
+                            .read<CategoryProvider>()
                             .filterItemByCategory(category),
                         child: Container(
                           width: 100,

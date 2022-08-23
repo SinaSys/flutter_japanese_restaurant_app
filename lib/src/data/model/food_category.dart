@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart' show immutable;
 
 @immutable
 class FoodCategory extends Equatable {

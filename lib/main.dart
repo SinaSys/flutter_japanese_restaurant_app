@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/category/category_cubit.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/food/food_cubit.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/theme/theme_cubit.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/theme/theme_state.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/category/category_provider.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/food/food_provider.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/theme/theme_provider.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
 import 'package:flutter_japanese_restaurant_app/src/presentation/screen/home_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(const MyApp());
 
@@ -14,30 +13,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RepositoryProvider<Repository>(
-      create: (context) => Repository(),
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider<FoodCubit>(
-            create: (context) =>
-                FoodCubit(repository: context.read<Repository>()),
+    return MultiProvider(
+      providers: [
+        Provider<Repository>(create: (context) => Repository()),
+        ChangeNotifierProvider<FoodProvider>(
+          create: (context) => FoodProvider(
+            repository: context.read<Repository>(),
           ),
-          BlocProvider<CategoryCubit>(
-            create: (context) =>
-                CategoryCubit(repository: context.read<Repository>()),
+        ),
+        ChangeNotifierProvider<CategoryProvider>(
+          create: (context) => CategoryProvider(
+            repository: context.read<Repository>(),
           ),
-          BlocProvider<ThemeCubit>(
-            create: (context) => ThemeCubit(),
-          ),
-        ],
-        child: BlocBuilder<ThemeCubit, ThemeState>(
-          builder: (context, state) {
-            return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: state.theme,
-              home: HomeScreen(),
-            );
-          },
+        ),
+        ChangeNotifierProvider<ThemeProvider>(
+          create: (context) => ThemeProvider(),
+        ),
+      ],
+      child: Consumer<ThemeProvider>(
+        builder: (_, themeProvider, __) => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: themeProvider.state.theme,
+          home: HomeScreen(),
         ),
       ),
     );

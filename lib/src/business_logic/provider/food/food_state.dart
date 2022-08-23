@@ -1,5 +1,8 @@
-part of 'food_cubit.dart';
+import 'package:flutter/foundation.dart' show immutable;
+import '../../../data/model/food.dart';
+import 'package:equatable/equatable.dart';
 
+@immutable
 class FoodState extends Equatable {
   final List<Food> foodList;
 
