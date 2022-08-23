@@ -19,7 +19,7 @@ designed by [gandkurniawan](https://dribbble.com/gandkurniawan)
   <br/>
 
 ## Cubit | Bloc | GetX | Provider 
-There are four different implementations: 1: Provider version, 2: Cubit version, 3: Bloc version, 4: GetX version <br/>
+There are four different implementations: 1: Cubit version, 2: Bloc version, 3: GetX version, 4: Provider version <br/>
 • You can access Cubit version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/cubit) <br/>
 • You can access Bloc version from ```bloc branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/bloc) <br/>
 • You can access GetX version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/master) <br/>
