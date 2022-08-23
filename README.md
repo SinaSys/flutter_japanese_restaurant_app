@@ -16,7 +16,7 @@ Japanese restaurant app is a design implementation of [Japanese restaurant app](
 
   <br/>
 
-## GetX| Provider | Cubit | Bloc
+## GetX | Provider | Cubit | Bloc
 There are four different implementations: 1: Provider version, 2: Cubit version, 3: Bloc version, 4: GetX version <br/>
 • You can access GetX version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/master) <br/>
 • You can access Provider version from ```provider branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/provider) <br/>
