@@ -1,4 +1,4 @@
-enum FoodType {all, sushi, kebab, tempura, ramen, burger }
+enum FoodType { all, sushi, kebab, tempura, ramen, burger }
 
 class Food {
   String image;
@@ -12,5 +12,5 @@ class Food {
   int voter;
 
   Food(this.image, this.name, this.price, this.quantity, this.isFavorite,
-      this.description, this.score, this.type,this.voter);
+      this.description, this.score, this.type, this.voter);
 }

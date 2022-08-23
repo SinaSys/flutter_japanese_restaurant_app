@@ -18,13 +18,12 @@ class FoodDetailScreen extends StatelessWidget {
 
   final Food food;
 
-  PreferredSizeWidget _appBar(BuildContext context){
+  PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
-      title:  Text("Food Detail Screen",
+      title: Text(
+        "Food Detail Screen",
         style: TextStyle(
-            color: controller.isLightTheme? Colors.black:
-            Colors.white
-        ),
+            color: controller.isLightTheme ? Colors.black : Colors.white),
       ),
       leading: IconButton(
         onPressed: () => Navigator.pop(context),
@@ -39,16 +38,15 @@ class FoodDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget fab( VoidCallback onPressed){
+  Widget fab(VoidCallback onPressed) {
     return FloatingActionButton(
       elevation: 0.0,
       backgroundColor: LightThemeColor.accent,
       child: food.isFavorite
           ? const Icon(AppIcon.heart)
           : const Icon(AppIcon.outlinedHeart),
-      //onPressed: () => foodController.isFavoriteFood(food),
       onPressed: onPressed,
-    ) ;
+    );
   }
 
   @override
@@ -68,12 +66,15 @@ class FoodDetailScreen extends StatelessWidget {
         child: SizedBox(
           height: height * 0.5,
           child: Container(
-            decoration:  BoxDecoration(
-                color: controller.isLightTheme? Colors.white : DarkThemeColor.primaryLight,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
-                )),
+            decoration: BoxDecoration(
+              color: controller.isLightTheme
+                  ? Colors.white
+                  : DarkThemeColor.primaryLight,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(30),
               child: SingleChildScrollView(
@@ -133,7 +134,8 @@ class FoodDetailScreen extends StatelessWidget {
                     ).fadeAnimation(0.6),
                     const SizedBox(height: 15),
                     Text("Description",
-                        style: Theme.of(context).textTheme.headline2).fadeAnimation(0.8),
+                            style: Theme.of(context).textTheme.headline2)
+                        .fadeAnimation(0.8),
                     const SizedBox(height: 15),
                     Text(
                       food.description,

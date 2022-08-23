@@ -49,7 +49,7 @@ dev_dependencies:
   font_awesome_flutter: ^10.1.0
   get: ^4.6.1
   badges: ^2.0.2
-  animations: ^2.0.2
+  animations: ^2.0.3
   simple_animations: ^4.0.1
 
 

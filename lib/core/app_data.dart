@@ -14,50 +14,41 @@ class AppData {
 
   static List<Food> foodItems = [
     Food(AppAsset.sushi1, "Sushi1", 10.0, 1, false, dummyText, 5.0,
-        FoodType.sushi,150),
+        FoodType.sushi, 150),
     Food(AppAsset.sushi2, "Sushi2", 15.0, 1, false, dummyText, 3.5,
-        FoodType.sushi,652),
+        FoodType.sushi, 652),
     Food(AppAsset.sushi3, "Sushi3", 20.0, 1, false, dummyText, 4.0,
-        FoodType.sushi,723),
+        FoodType.sushi, 723),
     Food(AppAsset.sushi4, "Sushi4", 40.0, 1, false, dummyText, 2.5,
-        FoodType.kebab,456),
+        FoodType.kebab, 456),
     Food(AppAsset.sushi5, "Sushi5", 10.0, 1, false, dummyText, 4.5,
-        FoodType.kebab,650),
+        FoodType.kebab, 650),
     Food(AppAsset.sushi6, "Sushi6", 20.0, 1, false, dummyText, 1.5,
-        FoodType.burger,350),
+        FoodType.burger, 350),
     Food(AppAsset.sushi7, "Sushi7", 12.0, 1, false, dummyText, 3.5,
-        FoodType.burger,265),
+        FoodType.burger, 265),
     Food(AppAsset.sushi8, "Sushi8", 30.0, 1, false, dummyText, 4.0,
-        FoodType.ramen,890),
+        FoodType.ramen, 890),
     Food(AppAsset.sushi9, "Sushi9", 10.0, 1, false, dummyText, 5.0,
-        FoodType.ramen,900),
+        FoodType.ramen, 900),
     Food(AppAsset.sushi10, "Sushi10", 15.0, 1, false, dummyText, 3.5,
-        FoodType.ramen,420),
+        FoodType.ramen, 420),
     Food(AppAsset.sushi11, "Sushi11", 25.0, 1, false, dummyText, 3.0,
-        FoodType.tempura,263),
+        FoodType.tempura, 263),
     Food(AppAsset.sushi12, "Sushi12", 20.0, 1, false, dummyText, 5.0,
-        FoodType.tempura,560),
+        FoodType.tempura, 560),
   ];
 
   static List<BottomNavigationItem> bottomNavigationItems = [
     BottomNavigationItem(
-        const Icon(Icons.home_outlined),
-        const Icon(Icons.home),
-        'Home',
-        isSelected: true
-    ),
+        const Icon(Icons.home_outlined), const Icon(Icons.home), 'Home',
+        isSelected: true),
+    BottomNavigationItem(const Icon(Icons.shopping_cart_outlined),
+        const Icon(Icons.shopping_cart), 'Shopping cart'),
+    BottomNavigationItem(const Icon(AppIcon.outlinedHeart),
+        const Icon(AppIcon.heart), 'Favorite'),
     BottomNavigationItem(
-        const Icon(Icons.shopping_cart_outlined),
-        const Icon(Icons.shopping_cart),
-        'Shopping cart'),
-    BottomNavigationItem(
-        const  Icon(AppIcon.outlinedHeart),
-        const Icon(AppIcon.heart),
-        'Favorite'),
-    BottomNavigationItem(
-        const Icon(Icons.person_outline),
-        const Icon(Icons.person),
-        'Profile')
+        const Icon(Icons.person_outline), const Icon(Icons.person), 'Profile')
   ];
 
   static List<FoodCategory> categories = [

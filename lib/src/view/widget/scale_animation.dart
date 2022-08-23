@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ScaleAnimation extends StatefulWidget {
-  const ScaleAnimation({Key? key,required this.child}) : super(key: key);
+  const ScaleAnimation({Key? key, required this.child}) : super(key: key);
 
   final Widget child;
 
   @override
-  _ScaleAnimationState createState() =>
-      _ScaleAnimationState();
+  _ScaleAnimationState createState() => _ScaleAnimationState();
 }
 
 class _ScaleAnimationState extends State<ScaleAnimation>
@@ -26,8 +25,7 @@ class _ScaleAnimationState extends State<ScaleAnimation>
         lowerBound: 0,
         upperBound: 1);
 
-    _animation =
-        CurvedAnimation(parent: _controller, curve: Curves.bounceOut);
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.bounceOut);
 
     _controller.forward();
   }
@@ -40,7 +38,7 @@ class _ScaleAnimationState extends State<ScaleAnimation>
 
   @override
   Widget build(BuildContext context) {
-    return  Center(
+    return Center(
       child: ScaleTransition(
         scale: _animation,
         child: widget.child,

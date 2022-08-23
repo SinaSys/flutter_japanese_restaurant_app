@@ -13,7 +13,7 @@ final FoodController controller = Get.put(FoodController());
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
 
-  PreferredSizeWidget _appBar(BuildContext context){
+  PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
       title: Text(
         "Cart screen",
@@ -22,17 +22,17 @@ class CartScreen extends StatelessWidget {
     );
   }
 
-  Widget _bottomAppBar(double height,double width,BuildContext context){
+  Widget _bottomAppBar(double height, double width, BuildContext context) {
     return BottomAppBar(
       child: SizedBox(
         height: height * 0.32,
         child: Container(
           decoration: const BoxDecoration(
-            // color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              )),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+          ),
           child: Padding(
             padding: const EdgeInsets.all(30),
             child: SingleChildScrollView(
@@ -44,12 +44,10 @@ class CartScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Subtotal",
-                            style:
-                            Theme.of(context).textTheme.headline5),
-                        Obx((){
+                            style: Theme.of(context).textTheme.headline5),
+                        Obx(() {
                           return Text("\$${controller.subtotalPrice.value}",
-                              style:
-                              Theme.of(context).textTheme.headline2);
+                              style: Theme.of(context).textTheme.headline2);
                         }),
                       ],
                     ),
@@ -61,11 +59,9 @@ class CartScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Taxes",
-                            style:
-                            Theme.of(context).textTheme.headline5),
+                            style: Theme.of(context).textTheme.headline5),
                         Text("\$${5.00}",
-                            style:
-                            Theme.of(context).textTheme.headline2),
+                            style: Theme.of(context).textTheme.headline2),
                       ],
                     ),
                   ),
@@ -82,13 +78,14 @@ class CartScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Total",
-                            style:
-                            Theme.of(context).textTheme.headline2),
-                        Obx((){
+                            style: Theme.of(context).textTheme.headline2),
+                        Obx(() {
                           return Text(
-                            controller.totalPrice.value==5.0? "\$0.0" :  "\$${controller.totalPrice}" ,
-                            style: h2Style.copyWith(
-                                color: LightThemeColor.accent),
+                            controller.totalPrice.value == 5.0
+                                ? "\$0.0"
+                                : "\$${controller.totalPrice}",
+                            style:
+                                h2Style.copyWith(color: LightThemeColor.accent),
                           );
                         }),
                       ],
@@ -99,11 +96,9 @@ class CartScreen extends StatelessWidget {
                     width: double.infinity,
                     height: 45,
                     child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: width * 0.1),
+                        padding: EdgeInsets.symmetric(horizontal: width * 0.1),
                         child: ElevatedButton(
-                            onPressed: () {},
-                            child: const Text("Checkout"))),
+                            onPressed: () {}, child: const Text("Checkout"))),
                   )
                 ],
               ),
@@ -114,29 +109,30 @@ class CartScreen extends StatelessWidget {
     );
   }
 
-  Widget cartListView(BuildContext context){
+  Widget cartListView(BuildContext context) {
     return ListView.separated(
       padding: const EdgeInsets.all(30),
       shrinkWrap: true,
       itemCount: controller.cartFood.length,
       itemBuilder: (_, index) {
         return Dismissible(
-          onDismissed: (direction){
-            if(direction==DismissDirection.startToEnd) {
+          onDismissed: (direction) {
+            if (direction == DismissDirection.startToEnd) {
               controller.removeCartItemAtSpecificIndex(index);
             }
           },
           key: Key(controller.cartFood[index].name),
-          background: Row(children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 25),
-                decoration: BoxDecoration(
-                    color: Colors.redAccent,
-                    borderRadius: BorderRadius.circular(15)
-                ),
-                child: const FaIcon(FontAwesomeIcons.trash)
-            ),
-          ],),
+          background: Row(
+            children: [
+              Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
+                  decoration: BoxDecoration(
+                      color: Colors.redAccent,
+                      borderRadius: BorderRadius.circular(15)),
+                  child: const FaIcon(FontAwesomeIcons.trash)),
+            ],
+          ),
           child: Container(
             padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
@@ -149,8 +145,7 @@ class CartScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const SizedBox(width: 20),
-                Image.asset(controller.cartFood[index].image,
-                    scale: 10),
+                Image.asset(controller.cartFood[index].image, scale: 10),
                 const SizedBox(width: 20),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -171,26 +166,19 @@ class CartScreen extends StatelessWidget {
                   children: [
                     CounterButton(
                       onIncrementSelected: () =>
-                          controller.increaseItem(
-                              controller.cartFood[index]),
+                          controller.increaseItem(controller.cartFood[index]),
                       onDecrementSelected: () =>
-                          controller.decreaseItem(
-                              controller.cartFood[index]),
+                          controller.decreaseItem(controller.cartFood[index]),
                       size: const Size(24, 24),
                       padding: 0,
                       label: Text(
-                        controller.cartFood[index].quantity
-                            .toString(),
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline2,
+                        controller.cartFood[index].quantity.toString(),
+                        style: Theme.of(context).textTheme.headline2,
                       ),
                     ),
-                    Text("\$${controller.calculatePricePerEachItem(
-                        controller.cartFood[index])}"
-                      ,
-                      style: h2Style.copyWith(
-                          color: LightThemeColor.accent),
+                    Text(
+                      "\$${controller.calculatePricePerEachItem(controller.cartFood[index])}",
+                      style: h2Style.copyWith(color: LightThemeColor.accent),
                     )
                   ],
                 )
@@ -205,22 +193,21 @@ class CartScreen extends StatelessWidget {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       bottomNavigationBar: controller.cartFood.isNotEmpty
-          ? _bottomAppBar(height,width,context)
+          ? _bottomAppBar(height, width, context)
           : const SizedBox(),
       appBar: _appBar(context),
       body: EmptyWidget(
         title: "Empty cart",
         condition: controller.cartFood.isNotEmpty,
         child: SingleChildScrollView(
-          child:   SizedBox(
-            height: height*0.5,
+          child: SizedBox(
+            height: height * 0.5,
             child: GetBuilder(
               builder: (FoodController controller) {
                 return cartListView(context);

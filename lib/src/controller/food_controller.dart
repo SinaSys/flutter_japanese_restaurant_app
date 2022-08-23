@@ -17,8 +17,7 @@ class FoodController extends GetxController {
   Rx<ThemeData> theme = AppTheme.lightTheme.obs;
   bool isLightTheme = true;
 
-
-  void switchBetweenBottomNavigationItems(int currentIndex){
+  void switchBetweenBottomNavigationItems(int currentIndex) {
     currentBottomNavItemIndex.value = currentIndex;
   }
 
@@ -50,10 +49,9 @@ class FoodController extends GetxController {
     }
 
     subtotalPrice.value = 0;
-    if(totalPrice.value>0){
-      subtotalPrice.value =  totalPrice.value - 5;
+    if (totalPrice.value > 0) {
+      subtotalPrice.value = totalPrice.value - 5;
     }
-
   }
 
   addToCart(Food food) {
@@ -82,7 +80,6 @@ class FoodController extends GetxController {
     filteredFoods.refresh();
   }
 
-
   isFavoriteFood(Food food) {
     food.isFavorite = !food.isFavorite;
     update();
@@ -94,20 +91,19 @@ class FoodController extends GetxController {
     }
   }
 
-  removeCartItemAtSpecificIndex(int index){
+  removeCartItemAtSpecificIndex(int index) {
     cartFood.removeAt(index);
     calculateTotalPrice();
     update();
   }
 
-
   void changeTheme() {
     if (theme.value == AppTheme.darkTheme) {
       theme.value = AppTheme.lightTheme;
-      isLightTheme=true;
+      isLightTheme = true;
     } else {
       theme.value = AppTheme.darkTheme;
-      isLightTheme=false;
+      isLightTheme = false;
     }
   }
 }

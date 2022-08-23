@@ -38,8 +38,8 @@ class FavoriteScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15.0),
               ),
               child: ListTile(
-                title:
-                Text(food.name, style: Theme.of(context).textTheme.headline4),
+                title: Text(food.name,
+                    style: Theme.of(context).textTheme.headline4),
                 leading: Image.asset(food.image),
                 subtitle: Text(
                   food.description,

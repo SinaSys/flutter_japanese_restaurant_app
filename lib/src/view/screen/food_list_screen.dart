@@ -9,7 +9,6 @@ import '../widget/food_list_view.dart';
 import 'package:badges/badges.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 final FoodController controller = Get.put(FoodController());
 
 class FoodListScreen extends StatelessWidget {
@@ -30,7 +29,7 @@ class FoodListScreen extends StatelessWidget {
       ),
       actions: [
         IconButton(
-          onPressed: (){},
+          onPressed: () {},
           icon: Badge(
             badgeColor: LightThemeColor.accent,
             badgeContent:
@@ -56,7 +55,6 @@ class FoodListScreen extends StatelessWidget {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,9 +66,11 @@ class FoodListScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Morning, Sina",
-                  style: Theme.of(context).textTheme.headline5).fadeAnimation(0.2),
+                      style: Theme.of(context).textTheme.headline5)
+                  .fadeAnimation(0.2),
               Text("What do you want to eat \ntoday",
-                  style: Theme.of(context).textTheme.headline1).fadeAnimation(0.4),
+                      style: Theme.of(context).textTheme.headline1)
+                  .fadeAnimation(0.4),
               _searchBar(),
               Text("Available for you",
                   style: Theme.of(context).textTheme.headline3),
@@ -123,22 +123,23 @@ class FoodListScreen extends StatelessWidget {
                 },
               ),
               Padding(
-                  padding: const EdgeInsets.only(top: 25, bottom: 5),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Best food of the week",
-                          style: Theme.of(context).textTheme.headline3),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 20),
-                        child: Text("See all",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline4
-                                ?.copyWith(color: LightThemeColor.accent)),
-                      ),
-                    ],
-                  )),
+                padding: const EdgeInsets.only(top: 25, bottom: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Best food of the week",
+                        style: Theme.of(context).textTheme.headline3),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 20),
+                      child: Text("See all",
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline4
+                              ?.copyWith(color: LightThemeColor.accent)),
+                    ),
+                  ],
+                ),
+              ),
               FoodListView(foods: AppData.foodItems, isReversedList: true),
             ],
           ),

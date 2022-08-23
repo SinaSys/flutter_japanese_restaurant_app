@@ -20,29 +20,6 @@ extension IterableWithIndex<T> on Iterable<T> {
   }
 }
 
-extension EnumExtension<T> on List<T> {
-  List<String> toListString() {
-    List<String> list = <String>[];
-    List<String> stringWithDotSeparator = <String>[];
-    stringWithDotSeparator = map((element) => element.toString()).toList();
-    for (int i = 0; i < length; i++) {
-      list.add(stringWithDotSeparator[i].split(".").last);
-    }
-    return list;
-  }
-}
-
-extension ListExtension on List<String> {
-  List<String> toCapital() {
-    List<String> capitalList = [];
-    for (var i = 0; i < length; ++i) {
-      capitalList
-          .add(this[i][0].toUpperCase() + this[i].substring(1, this[i].length));
-    }
-    return capitalList;
-  }
-}
-
 extension StringExtension on String {
   String get toCapital => this[0].toUpperCase() + substring(1, length);
 }
