@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - master
-      
+
 name: "Build & Release"
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter build apk
-      - name: Push to Releases
+#      - name: Push to Releases
 #        uses: ncipollo/release-action@v1
 #        with:
 #          artifacts: "build/app/outputs/apk/release/app-release.apk"
