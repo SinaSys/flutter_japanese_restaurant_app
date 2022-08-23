@@ -1,7 +1,7 @@
 # flutter_japanese_restaurant_app
 
 <p align="center">
-  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_japanese_restaurant_app/Analysis%20&%20Build/cubit?label=CI&logo=github">
+  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_japanese_restaurant_app/Analysis%20&%20Build/provider?label=CI&logo=github">
   <img src="https://img.shields.io/github/v/release/SinaSys/flutter_japanese_restaurant_app?label=Release&logo=semantic-release">
   <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_japanese_restaurant_app/provider">
 </p>
