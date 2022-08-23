@@ -48,11 +48,11 @@ dev_dependencies:
   flutter_rating_bar: ^4.0.0
   font_awesome_flutter: ^10.1.0
   badges: ^2.0.2
-  animations: ^2.0.2
+  animations: ^2.0.3
   simple_animations: ^4.0.1
   equatable: ^2.0.3
   flutter_bloc: ^8.0.1
-  flutter_hooks: ^0.18.3
+  flutter_hooks: ^0.18.5
 
 
 

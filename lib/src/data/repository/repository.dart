@@ -2,12 +2,12 @@ import '../../../core/app_asset.dart';
 import '../model/food.dart';
 import '../model/food_category.dart';
 
-class Repository{
-  get getFoodList{
-     const _dummyText =
+class Repository {
+  get getFoodList {
+    const _dummyText =
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
-     const List<Food> _foodItems = [
+    const List<Food> _foodItems = [
       Food(
           id: 1,
           image: AppAsset.sushi1,
@@ -121,10 +121,10 @@ class Repository{
     return _foodItems;
   }
 
-  get getCategories{
+  get getCategories {
     const List<FoodCategory> categories = [
-      FoodCategory(type: FoodType.all,isSelected:  true),
-      FoodCategory(type:FoodType.sushi,isSelected: false),
+      FoodCategory(type: FoodType.all, isSelected: true),
+      FoodCategory(type: FoodType.sushi, isSelected: false),
       FoodCategory(type: FoodType.kebab, isSelected: false),
       FoodCategory(type: FoodType.tempura, isSelected: false),
       FoodCategory(type: FoodType.ramen, isSelected: false),

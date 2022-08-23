@@ -1,5 +1,6 @@
 part of 'category_bloc.dart';
 
+@immutable
 class CategoryState extends Equatable {
   final List<FoodCategory> foodCategories;
   final List<Food> foodList;

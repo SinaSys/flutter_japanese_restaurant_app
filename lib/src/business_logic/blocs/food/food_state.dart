@@ -1,5 +1,6 @@
 part of 'food_bloc.dart';
 
+@immutable
 class FoodState extends Equatable {
   final List<Food> foodList;
 

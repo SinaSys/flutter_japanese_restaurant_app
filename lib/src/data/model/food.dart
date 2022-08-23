@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show immutable;
 
 enum FoodType { all, sushi, kebab, tempura, ramen, burger }
 
