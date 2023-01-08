@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_japanese_restaurant_app/src/controller/food_controller.dart';
-import 'package:flutter_japanese_restaurant_app/src/view/screen/home_screen.dart';
+import 'src/controller/food_controller.dart';
+import 'src/view/screen/home_screen.dart';
+
 import 'package:get/get.dart';
 
 final FoodController controller = Get.put(FoodController());

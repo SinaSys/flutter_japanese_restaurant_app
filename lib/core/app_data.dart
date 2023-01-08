@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_japanese_restaurant_app/core/app_asset.dart';
-import 'package:flutter_japanese_restaurant_app/src/model/food_category.dart';
+
 import '../src/model/bottom_navigation_item.dart';
 import '../src/model/food.dart';
 
+import '../src/model/food_category.dart';
+import 'app_asset.dart';
 import 'app_icon.dart';
 
 class AppData {

@@ -1,4 +1,4 @@
-import 'package:flutter_japanese_restaurant_app/src/model/food.dart';
+import 'food.dart';
 
 class FoodCategory {
   final FoodType type;

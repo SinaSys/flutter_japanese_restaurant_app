@@ -57,6 +57,22 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
 • State management with GetX | Cubit | Bloc | Provider
 ```
 
+  <br/>
+
+## Dependencies
+|       Name      |    Cubit  <br/> version      |       Bloc <br/> version       |      GetX <br/> version     |    provider <br/> version   |
+| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |  :------------------------: | 
+| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    | ✖️    |
+| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    |✖️    |
+| [provider](https://pub.dev/packages/provider)  | ✖️  |  ✖️  | ✖️    | ✔️    | 
+| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ |✔️    | 
+| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ |✔️    | 
+| [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)  | ✔️  | ✔️ | ✔️ |✔️    | 
+| [badges](https://pub.dev/packages/badges)  | ✔️  | ✔️ |✔️ |✔️    | 
+| [animations](https://pub.dev/packages/animations)  | ✔️  | ✔️ |✔️ |✔️    | 
+| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |✔️    | 
+
+  <br/>
 
 
 ## Directory Structure (GetX version)
@@ -255,37 +271,17 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
                    └──theme_state.dart
 ```
 
-
-## Pull Requests
-I welcome and encourage all pull requests. It usually will take me within 48-72 hours to respond to any issue or request.
-
-
-  <br/>
-
-## Dependencies
-|       Name      |    Cubit  <br/> version      |       Bloc <br/> version       |      GetX <br/> version     |    provider <br/> version   |
-| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |  :------------------------: | 
-| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    | ✖️    |
-| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    |✖️    |
-| [provider](https://pub.dev/packages/provider)  | ✖️  |  ✖️  | ✖️    | ✔️    | 
-| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ |✔️    | 
-| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ |✔️    | 
-| [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)  | ✔️  | ✔️ | ✔️ |✔️    | 
-| [badges](https://pub.dev/packages/badges)  | ✔️  | ✔️ |✔️ |✔️    | 
-| [animations](https://pub.dev/packages/animations)  | ✔️  | ✔️ |✔️ |✔️    | 
-| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |✔️    | 
-
-  <br/>
-
+<br>
 
 ## Created & Maintained By
 
 [SinaSys](https://github.com/SinaSys) 
 
+<br>
 
-
-## My other flutter projects
-project        |
-:-------------------------|
-|[Office furniture store app](https://github.com/SinaSys/flutter_office_furniture_store_app)
-|[Ecommerce app](https://github.com/SinaSys/flutter_ecommerce_app)
+##  Other flutter projects
+Project Name        |Stars
+:-------------------------|-------------------------
+[Go rest app](https://github.com/SinaSys/flutter_go_rest_app)|![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_go_rest_app?style=social)
+|[Office furniture store app](https://github.com/SinaSys/flutter_office_furniture_store_app) |![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_office_furniture_store_app?style=social)
+|[Ecommerce app](https://github.com/SinaSys/flutter_ecommerce_app) |![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_ecommerce_app?style=social)

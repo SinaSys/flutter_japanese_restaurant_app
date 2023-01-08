@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
-import 'package:flutter_japanese_restaurant_app/src/view/widget/custom_page_route.dart';
+import '../../../core/app_extension.dart';
 import 'package:get/get.dart';
 import '../../../core/app_color.dart';
 import '../../../core/app_style.dart';
 import '../../controller/food_controller.dart';
 import '../../model/food.dart';
 import '../screen/food_detail_screen.dart';
+import 'custom_page_route.dart';
 
 final FoodController controller = Get.put(FoodController());
 

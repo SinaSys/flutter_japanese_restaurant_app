@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
-import 'package:flutter_japanese_restaurant_app/core/app_data.dart';
-import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
-import 'package:flutter_japanese_restaurant_app/src/model/food_category.dart';
+import '../../../core/app_extension.dart';
+import '../../../core/app_color.dart';
+import '../../../core/app_data.dart';
 import 'package:get/get.dart';
 import '../../controller/food_controller.dart';
+import '../../model/food_category.dart';
 import '../widget/food_list_view.dart';
 import 'package:badges/badges.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
