@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/category/category_cubit.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/food/food_cubit.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/theme/theme_cubit.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/theme/theme_state.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
-import 'package:flutter_japanese_restaurant_app/src/presentation/screen/home_screen.dart';
+
+import 'src/business_logic/cubits/category/category_cubit.dart';
+import 'src/business_logic/cubits/food/food_cubit.dart';
+import 'src/business_logic/cubits/theme/theme_cubit.dart';
+import 'src/business_logic/cubits/theme/theme_state.dart';
+import 'src/data/repository/repository.dart';
+import 'src/presentation/screen/home_screen.dart';
 
 void main() => runApp(const MyApp());
 

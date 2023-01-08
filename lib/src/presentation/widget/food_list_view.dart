@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
 import '../../../core/app_color.dart';
+import '../../../../core/app_extension.dart';
+
 import '../../../core/app_style.dart';
 import '../../business_logic/cubits/theme/theme_cubit.dart';
 import '../../data/model/food.dart';

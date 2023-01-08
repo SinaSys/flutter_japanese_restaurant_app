@@ -1,7 +1,7 @@
 # flutter_japanese_restaurant_app
 
 <p align="center">
-  <img src="https://img.shields.io/github/workflow/status/SinaSys/flutter_japanese_restaurant_app/Analysis%20&%20Build/cubit?label=CI&logo=github">
+  <img src="https://img.shields.io/github/actions/workflow/status/SinaSys/flutter_japanese_restaurant_app/main.yml?branch=cubit&label=CI%20&logo=github">
   <img src="https://img.shields.io/github/v/release/SinaSys/flutter_japanese_restaurant_app?label=Release&logo=semantic-release">
   <img src="https://img.shields.io/github/last-commit/SinaSys/flutter_japanese_restaurant_app/cubit">
 </p>
@@ -56,6 +56,26 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
 • Filter foods by category
 • State management with GetX | Cubit | Bloc | Provider
 ```
+
+
+  <br/>
+
+## Dependencies
+|       Name      |    Cubit  <br/> version      |       Bloc <br/> version       |      GetX <br/> version     |    provider <br/> version   |
+| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |  :------------------------: | 
+| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    | ✖️    |
+| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    |✖️    |
+| [provider](https://pub.dev/packages/provider)  | ✖️  |  ✖️  | ✖️    | ✔️    | 
+| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ |✔️    | 
+| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ |✔️    | 
+| [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)  | ✔️  | ✔️ | ✔️ |✔️    | 
+| [badges](https://pub.dev/packages/badges)  | ✔️  | ✔️ |✔️ |✔️    | 
+| [animations](https://pub.dev/packages/animations)  | ✔️  | ✔️ |✔️ |✔️    | 
+| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |✔️    | 
+
+
+  <br/>
+
 
 ## Directory Structure (Cubit version)
 
@@ -256,25 +276,6 @@ Favorite screen            |   Home screen             |  Food Detail Screen    
 
 
 
-## Pull Requests
-
-I welcome and encourage all pull requests. It usually will take me within 48-72 hours to respond to
-any issue or request.
-
-  <br/>
-
-## Dependencies
-|       Name      |    Cubit  <br/> version      |       Bloc <br/> version       |      GetX <br/> version     |    provider <br/> version   |
-| :-------------: | :--------------------------: | :----------------------------: |  :------------------------: |  :------------------------: | 
-| [flutter_bloc](https://pub.dev/packages/flutter_bloc)  |  ✔️  |  ✔️  |    ✖️    | ✖️    |
-| [GetX](https://pub.dev/packages/get)  | ✖️  |  ✖️  | ✔️    |✖️    |
-| [provider](https://pub.dev/packages/provider)  | ✖️  |  ✖️  | ✖️    | ✔️    | 
-| [flutter_hooks](https://pub.dev/packages/flutter_hooks)  | ✔️  | ✔️  | ✖️ |✔️    | 
-| [equatable](https://pub.dev/packages/equatable)  | ✔️  | ✔️  | ✖️ |✔️    | 
-| [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)  | ✔️  | ✔️ | ✔️ |✔️    | 
-| [badges](https://pub.dev/packages/badges)  | ✔️  | ✔️ |✔️ |✔️    | 
-| [animations](https://pub.dev/packages/animations)  | ✔️  | ✔️ |✔️ |✔️    | 
-| [simple_animations](https://pub.dev/packages/simple_animations)  | ✔️  | ✔️ |✔️ |✔️    | 
 
   <br/>
 
@@ -282,9 +283,9 @@ any issue or request.
 
 [SinaSys](https://github.com/SinaSys)
 
-## My other flutter projects
-
-project        |
-:-------------------------|
-|[Office furniture store app](https://github.com/SinaSys/flutter_office_furniture_store_app)
-|[Ecommerce app](https://github.com/SinaSys/flutter_ecommerce_app)
+##  Other flutter projects
+Project Name        |Stars
+:-------------------------|-------------------------
+[Go rest app](https://github.com/SinaSys/flutter_go_rest_app)|![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_go_rest_app?style=social)
+|[Office furniture store app](https://github.com/SinaSys/flutter_office_furniture_store_app) |![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_office_furniture_store_app?style=social)
+|[Ecommerce app](https://github.com/SinaSys/flutter_ecommerce_app) |![GitHub stars](https://img.shields.io/github/stars/SinaSys/flutter_ecommerce_app?style=social)
