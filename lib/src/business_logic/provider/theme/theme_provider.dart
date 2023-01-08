@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart' show ChangeNotifier;
-import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/theme/theme_state.dart';
 import '../../../../core/app_theme.dart';
+import 'theme_state.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemeState _state;

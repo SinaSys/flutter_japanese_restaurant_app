@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/category/category_provider.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/food/food_provider.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/theme/theme_provider.dart';
-import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
-import 'package:flutter_japanese_restaurant_app/src/presentation/screen/home_screen.dart';
+
 import 'package:provider/provider.dart';
+
+import 'src/business_logic/provider/category/category_provider.dart';
+import 'src/business_logic/provider/food/food_provider.dart';
+import 'src/business_logic/provider/theme/theme_provider.dart';
+import 'src/data/repository/repository.dart';
+import 'src/presentation/screen/home_screen.dart';
 
 void main() => runApp(const MyApp());
 
