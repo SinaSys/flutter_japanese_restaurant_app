@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/category/category_bloc.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/food/food_bloc.dart';
-import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/theme/theme_bloc.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
-import 'package:flutter_japanese_restaurant_app/src/presentation/screen/home_screen.dart';
+
+import 'src/business_logic/blocs/category/category_bloc.dart';
+import 'src/business_logic/blocs/food/food_bloc.dart';
+import 'src/business_logic/blocs/theme/theme_bloc.dart';
+import 'src/data/repository/repository.dart';
+import 'src/presentation/screen/home_screen.dart';
 
 void main() => runApp(const MyApp());
 
