@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../core/app_color.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
 
 class CounterButton extends StatelessWidget {
   final Function() onIncrementSelected;
