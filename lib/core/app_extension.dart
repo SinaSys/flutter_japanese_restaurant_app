@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../src/data/model/food.dart';
-import '../src/presentation/animation/fade_animation.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
+import 'package:flutter_japanese_restaurant_app/src/presentation/animation/fade_animation.dart';
 
 extension StringExtension on String {
   String get toCapital => this[0].toUpperCase() + substring(1, length);

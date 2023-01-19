@@ -1,6 +1,6 @@
-import '../../../core/app_asset.dart';
-import '../model/food.dart';
-import '../model/food_category.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_asset.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food_category.dart';
 
 class Repository {
   get getFoodList {

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import '../../../../core/app_extension.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../core/app_icon.dart';
-import '../../data/model/food.dart';
-
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import '../../../core/app_color.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../business_logic/blocs/food/food_bloc.dart';
-import '../../business_logic/blocs/theme/theme_bloc.dart';
-import '../widget/counter_button.dart';
-import '../animation/scale_animation.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_icon.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
+import 'package:flutter_japanese_restaurant_app/src/presentation/widget/counter_button.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/food/food_bloc.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/theme/theme_bloc.dart';
+import 'package:flutter_japanese_restaurant_app/src/presentation/animation/scale_animation.dart';
 
 class FoodDetailScreen extends StatelessWidget {
   const FoodDetailScreen({Key? key, required this.food}) : super(key: key);

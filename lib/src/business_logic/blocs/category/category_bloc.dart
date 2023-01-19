@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart' show immutable;
-import '../../../data/model/food.dart';
-import '../../../data/model/food_category.dart';
-import '../../../data/repository/repository.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food_category.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
 
 part 'category_event.dart';
 
