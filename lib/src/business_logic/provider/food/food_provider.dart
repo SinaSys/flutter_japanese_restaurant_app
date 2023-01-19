@@ -1,9 +1,8 @@
 import 'package:flutter/foundation.dart' show ChangeNotifier;
-import '../../../../core/app_extension.dart';
-
-import '../../../data/model/food.dart';
-import '../../../data/repository/repository.dart';
-import 'food_state.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/food/food_state.dart';
 
 class FoodProvider with ChangeNotifier {
   FoodState _state;

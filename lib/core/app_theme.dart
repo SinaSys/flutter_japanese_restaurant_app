@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'app_color.dart';
-import 'app_style.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_style.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
 
 enum AppTheme { lightTheme, darkTheme }
 

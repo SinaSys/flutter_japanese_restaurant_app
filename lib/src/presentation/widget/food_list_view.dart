@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../core/app_color.dart';
-import '../../../core/app_style.dart';
-import '../../business_logic/provider/theme/theme_provider.dart';
-import '../../data/model/food.dart';
-import '../widget/custom_page_route.dart';
-import '../screen/food_detail_screen.dart';
 import 'package:provider/provider.dart';
-import '../../../../core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_style.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
+import 'package:flutter_japanese_restaurant_app/src/presentation/screen/food_detail_screen.dart';
+import 'package:flutter_japanese_restaurant_app/src/presentation/widget/custom_page_route.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/theme/theme_provider.dart';
 
 class FoodListView extends StatelessWidget {
   const FoodListView(

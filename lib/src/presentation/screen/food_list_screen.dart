@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import '../../../core/app_color.dart';
-import '../../../../core/app_extension.dart';
-import '../../business_logic/provider/food/food_provider.dart';
-import '../../business_logic/provider/theme/theme_provider.dart';
-import '../../data/model/food.dart';
-import '../../data/model/food_category.dart';
-import '../../business_logic/provider/category/category_provider.dart';
-import '../widget/food_list_view.dart';
 import 'package:badges/badges.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food_category.dart';
+import 'package:flutter_japanese_restaurant_app/src/presentation/widget/food_list_view.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/food/food_provider.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/theme/theme_provider.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/category/category_provider.dart';
 
 class FoodListScreen extends StatelessWidget {
   const FoodListScreen({Key? key}) : super(key: key);

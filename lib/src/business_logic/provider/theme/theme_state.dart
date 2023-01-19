@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart' show ThemeData, immutable;
-import '../../../../core/app_theme.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_theme.dart';
 
 @immutable
 class ThemeState extends Equatable {

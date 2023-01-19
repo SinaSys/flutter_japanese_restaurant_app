@@ -1,7 +1,7 @@
-import '../../../data/model/food.dart';
-import '../../../data/model/food_category.dart';
-import 'package:flutter/foundation.dart' show immutable;
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart' show immutable;
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food_category.dart';
 
 @immutable
 class CategoryState extends Equatable {

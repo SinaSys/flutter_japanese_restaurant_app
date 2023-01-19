@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../../core/app_extension.dart';
-import '../../../core/app_color.dart';
-import '../../business_logic/provider/food/food_provider.dart';
-import '../../business_logic/provider/theme/theme_provider.dart';
-import '../../data/model/food.dart';
-import '../../../core/app_icon.dart';
 import 'package:provider/provider.dart';
-
-import '../widget/empty_widget.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_icon.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
+import 'package:flutter_japanese_restaurant_app/src/presentation/widget/empty_widget.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/food/food_provider.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/theme/theme_provider.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({Key? key}) : super(key: key);
