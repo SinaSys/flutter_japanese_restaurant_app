@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import '../../../../core/app_extension.dart';
-
-import '../../../core/app_color.dart';
-import '../../../core/app_style.dart';
-import '../../business_logic/cubits/food/food_cubit.dart';
-import '../../business_logic/cubits/theme/theme_cubit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../data/model/food.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../widget/empty_widget.dart';
-import '../widget/counter_button.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_style.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
+import 'package:flutter_japanese_restaurant_app/src/presentation/widget/empty_widget.dart';
+import 'package:flutter_japanese_restaurant_app/src/presentation/widget/counter_button.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/food/food_cubit.dart';
+import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/theme/theme_cubit.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
