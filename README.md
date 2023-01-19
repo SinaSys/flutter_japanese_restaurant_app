@@ -14,17 +14,17 @@ designed by [gandkurniawan](https://dribbble.com/gandkurniawan)
 ![](https://github.com/SinaSys/flutter_japanese_restaurant_app/blob/master/screenshots/japanese_restaurant_app_light.png?raw=true)
 
 
-
   <br/>
 
-## Provider | Cubit | Bloc | GetX 
-There are four different implementations: 1: Provider version, 2: Cubit version, 3: Bloc version, 4: GetX version <br/>
-• You can access Provider version from ```provider branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/provider) <br/>
-• You can access Cubit version from ```cubit branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/cubit) <br/>
-• You can access Bloc version from ```bloc branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/bloc) <br/>
-• You can access GetX version from ```master branch``` [(here)](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/master) <br/>
+## GetX | Cubit | Bloc | Provider
 
- <br/>
+#### • Access to different versions
+
+|               Version               |                                                  Bloc                                                  |                                                  Cubit                                                   |                                                     Getx                                                      |                                                     Provider                                                      |
+|:-----------------------------------:|:------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------:|
+|               Branch                | [Source](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/bloc) <br/> (bloc branch)️ |                                    [Source](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/cubit)   <br/> (cubit branch)                                     | [Source](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/master)     <br/> (master branch) | [Source](https://github.com/SinaSys/flutter_japanese_restaurant_app/tree/provider)     <br/> (provider branch) |
+
+  <br/>
 
 ## Screenshots (Light mode)
 
