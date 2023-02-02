@@ -19,15 +19,15 @@ class HomeScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _selectedIndex = useState(0);
+    final selectedIndex = useState(0);
 
     return Scaffold(
       body: PageTransition(
-        child: screen[_selectedIndex.value],
+        child: screen[selectedIndex.value],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex.value,
-        onTap: (int index) => _selectedIndex.value = index,
+        currentIndex: selectedIndex.value,
+        onTap: (int index) => selectedIndex.value = index,
         selectedFontSize: 0,
         items: AppData.bottomNavigationItems.map(
           (element) {
