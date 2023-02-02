@@ -9,13 +9,13 @@ class EmptyWidget extends StatelessWidget {
   final bool condition;
   final Widget child;
 
-  const EmptyWidget(
-      {Key? key,
-      this.type = EmptyWidgetType.cart,
-      required this.title,
-      this.condition = false,
-      required this.child})
-      : super(key: key);
+  const EmptyWidget({
+    Key? key,
+    this.type = EmptyWidgetType.cart,
+    required this.title,
+    this.condition = false,
+    required this.child,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,19 +26,10 @@ class EmptyWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 type == EmptyWidgetType.cart
-                    ? Image.asset(
-                        AppAsset.emptyCart,
-                        width: 300,
-                      )
-                    : Image.asset(
-                        AppAsset.emptyFavorite,
-                        width: 300,
-                      ),
+                    ? Image.asset(AppAsset.emptyCart, width: 300)
+                    : Image.asset(AppAsset.emptyFavorite, width: 300),
                 const SizedBox(height: 10),
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.headline2,
-                )
+                Text(title, style: Theme.of(context).textTheme.headline2)
               ],
             ),
           );

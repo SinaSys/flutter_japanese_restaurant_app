@@ -6,13 +6,11 @@ class CategoryState extends Equatable {
   final List<Food> foodList;
 
   const CategoryState.initial(
-      List<Food> foodList, List<FoodCategory> foodCategories)
-      : this(foodList: foodList, foodCategories: foodCategories);
+    List<Food> foodList,
+    List<FoodCategory> foodCategories,
+  ) : this(foodList: foodList, foodCategories: foodCategories);
 
-  const CategoryState({
-    required this.foodCategories,
-    required this.foodList,
-  });
+  const CategoryState({required this.foodCategories, required this.foodList});
 
   @override
   List<Object?> get props => [foodCategories, foodList];

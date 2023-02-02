@@ -10,8 +10,9 @@ part 'food_event.dart';
 part 'food_state.dart';
 
 class FoodBloc extends Bloc<FoodEvent, FoodState> {
-  FoodBloc({required this.repository})
-      : super(FoodState.initial(repository.getFoodList)) {
+  FoodBloc({
+    required this.repository,
+  }) : super(FoodState.initial(repository.getFoodList)) {
     on<IncreaseQuantityEvent>(_increaseQuantity);
     on<DecreaseQuantityEvent>(_decreaseQuantity);
     on<RemoveItemEvent>(_removeItem);

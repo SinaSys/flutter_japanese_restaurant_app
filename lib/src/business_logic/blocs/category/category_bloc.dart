@@ -11,8 +11,12 @@ part 'category_state.dart';
 
 class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   CategoryBloc({required this.repository})
-      : super(CategoryState.initial(
-            repository.getFoodList, repository.getCategories)) {
+      : super(
+          CategoryState.initial(
+            repository.getFoodList,
+            repository.getCategories,
+          ),
+        ) {
     on<CategoryEvent>(_filterItemByCategory);
   }
 

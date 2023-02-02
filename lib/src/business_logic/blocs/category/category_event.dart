@@ -6,7 +6,5 @@ class CategoryEvent extends Equatable {
   @override
   List<Object?> get props => [category];
 
-  const CategoryEvent({
-    required this.category,
-  });
+  const CategoryEvent({required this.category});
 }

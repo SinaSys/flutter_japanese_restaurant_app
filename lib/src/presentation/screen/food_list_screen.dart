@@ -17,8 +17,9 @@ class FoodListScreen extends StatelessWidget {
   PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
       leading: IconButton(
-          icon: const FaIcon(FontAwesomeIcons.dice),
-          onPressed: () => context.read<ThemeBloc>().add(const ThemeEvent())),
+        icon: const FaIcon(FontAwesomeIcons.dice),
+        onPressed: () => context.read<ThemeBloc>().add(const ThemeEvent()),
+      ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -31,8 +32,10 @@ class FoodListScreen extends StatelessWidget {
           onPressed: () {},
           icon: Badge(
             badgeColor: LightThemeColor.accent,
-            badgeContent:
-                const Text("2", style: TextStyle(color: Colors.white)),
+            badgeContent: const Text(
+              "2",
+              style: TextStyle(color: Colors.white),
+            ),
             position: BadgePosition.topStart(start: -3),
             child: const Icon(Icons.notifications_none, size: 30),
           ),
@@ -72,15 +75,19 @@ class FoodListScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Morning, Sina",
-                      style: Theme.of(context).textTheme.headline5)
-                  .fadeAnimation(0.2),
-              Text("What do you want to eat \ntoday",
-                      style: Theme.of(context).textTheme.headline1)
-                  .fadeAnimation(0.4),
+              Text(
+                "Morning, Sina",
+                style: Theme.of(context).textTheme.headline5,
+              ).fadeAnimation(0.2),
+              Text(
+                "What do you want to eat \ntoday",
+                style: Theme.of(context).textTheme.headline1,
+              ).fadeAnimation(0.4),
               _searchBar(),
-              Text("Available for you",
-                  style: Theme.of(context).textTheme.headline3),
+              Text(
+                "Available for you",
+                style: Theme.of(context).textTheme.headline3,
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 15),
                 child: SizedBox(
@@ -113,7 +120,7 @@ class FoodListScreen extends StatelessWidget {
                         ),
                       );
                     },
-                    separatorBuilder: (BuildContext context, int index) {
+                    separatorBuilder: (_, __) {
                       return const Padding(padding: EdgeInsets.only(right: 15));
                     },
                   ),
@@ -125,15 +132,19 @@ class FoodListScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Best food of the week",
-                        style: Theme.of(context).textTheme.headline3),
+                    Text(
+                      "Best food of the week",
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20),
-                      child: Text("See all",
-                          style: Theme.of(context)
-                              .textTheme
-                              .headline4
-                              ?.copyWith(color: LightThemeColor.accent)),
+                      child: Text(
+                        "See all",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline4
+                            ?.copyWith(color: LightThemeColor.accent),
+                      ),
                     ),
                   ],
                 ),
