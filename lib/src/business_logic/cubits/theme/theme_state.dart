@@ -6,9 +6,7 @@ import 'package:flutter_japanese_restaurant_app/core/app_theme.dart';
 class ThemeState extends Equatable {
   final ThemeData theme;
 
-  const ThemeState({
-    required this.theme,
-  });
+  const ThemeState({required this.theme});
 
   factory ThemeState.initial() {
     return ThemeState(theme: AppThemes.appThemeData[AppTheme.darkTheme]!);
@@ -17,11 +15,7 @@ class ThemeState extends Equatable {
   @override
   List<Object?> get props => [theme];
 
-  ThemeState copyWith({
-    ThemeData? theme,
-  }) {
-    return ThemeState(
-      theme: theme ?? this.theme,
-    );
+  ThemeState copyWith({ThemeData? theme}) {
+    return ThemeState(theme: theme ?? this.theme);
   }
 }

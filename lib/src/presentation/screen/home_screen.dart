@@ -27,16 +27,15 @@ class HomeScreen extends HookWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex.value,
-        onTap: (int index) {
-          _selectedIndex.value = index;
-        },
+        onTap: (int index) => _selectedIndex.value = index,
         selectedFontSize: 0,
         items: AppData.bottomNavigationItems.map(
           (element) {
             return BottomNavigationBarItem(
-                icon: element.disableIcon,
-                label: element.label,
-                activeIcon: element.enableIcon);
+              icon: element.disableIcon,
+              label: element.label,
+              activeIcon: element.enableIcon,
+            );
           },
         ).toList(),
       ),

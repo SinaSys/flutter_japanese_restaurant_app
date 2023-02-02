@@ -9,8 +9,12 @@ part 'category_state.dart';
 
 class CategoryCubit extends Cubit<CategoryState> {
   CategoryCubit({required this.repository})
-      : super(CategoryState.initial(
-            repository.getFoodList, repository.getCategories));
+      : super(
+          CategoryState.initial(
+            repository.getFoodList,
+            repository.getCategories,
+          ),
+        );
 
   Repository repository;
 

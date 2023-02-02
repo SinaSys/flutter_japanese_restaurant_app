@@ -19,11 +19,12 @@ class _ScaleAnimationState extends State<ScaleAnimation>
     super.initState();
 
     _controller = AnimationController(
-        duration: const Duration(seconds: 2),
-        vsync: this,
-        value: 0,
-        lowerBound: 0,
-        upperBound: 1);
+      duration: const Duration(seconds: 2),
+      vsync: this,
+      value: 0,
+      lowerBound: 0,
+      upperBound: 1,
+    );
 
     _animation = CurvedAnimation(parent: _controller, curve: Curves.bounceOut);
 
@@ -39,10 +40,7 @@ class _ScaleAnimationState extends State<ScaleAnimation>
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ScaleTransition(
-        scale: _animation,
-        child: widget.child,
-      ),
+      child: ScaleTransition(scale: _animation, child: widget.child),
     );
   }
 }

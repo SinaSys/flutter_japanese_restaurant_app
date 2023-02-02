@@ -21,19 +21,17 @@ class FoodDetailScreen extends StatelessWidget {
       title: Text(
         "Food Detail Screen",
         style: TextStyle(
-            color: context.read<ThemeCubit>().isLightTheme
-                ? Colors.black
-                : Colors.white),
+          color: context.read<ThemeCubit>().isLightTheme
+              ? Colors.black
+              : Colors.white,
+        ),
       ),
       leading: IconButton(
         onPressed: () => Navigator.pop(context),
         icon: const Icon(Icons.arrow_back),
       ),
       actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.more_vert),
-        )
+        IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
       ],
     );
   }
@@ -96,18 +94,22 @@ class FoodDetailScreen extends StatelessWidget {
                           itemCount: 5,
                           glow: false,
                           ignoreGestures: true,
-                          itemBuilder: (context, _) => const FaIcon(
+                          itemBuilder: (_, __) => const FaIcon(
                             FontAwesomeIcons.solidStar,
                             color: LightThemeColor.yellow,
                           ),
                           onRatingUpdate: (rating) {},
                         ),
                         const SizedBox(width: 15),
-                        Text(food.score.toString(),
-                            style: Theme.of(context).textTheme.subtitle1),
+                        Text(
+                          food.score.toString(),
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
                         const SizedBox(width: 5),
-                        Text("(${food.voter})",
-                            style: Theme.of(context).textTheme.subtitle1)
+                        Text(
+                          "(${food.voter})",
+                          style: Theme.of(context).textTheme.subtitle1,
+                        )
                       ],
                     ).fadeAnimation(0.4),
                     const SizedBox(height: 15),
@@ -142,9 +144,10 @@ class FoodDetailScreen extends StatelessWidget {
                       ],
                     ).fadeAnimation(0.6),
                     const SizedBox(height: 15),
-                    Text("Description",
-                            style: Theme.of(context).textTheme.headline2)
-                        .fadeAnimation(0.8),
+                    Text(
+                      "Description",
+                      style: Theme.of(context).textTheme.headline2,
+                    ).fadeAnimation(0.8),
                     const SizedBox(height: 15),
                     Text(
                       food.description,
@@ -171,12 +174,7 @@ class FoodDetailScreen extends StatelessWidget {
         ),
       ),
       body: ScaleAnimation(
-        child: Center(
-          child: Image.asset(
-            food.image,
-            scale: 2,
-          ),
-        ),
+        child: Center(child: Image.asset(food.image, scale: 2)),
       ),
     );
   }

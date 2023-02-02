@@ -7,9 +7,7 @@ extension StringExtension on String {
 }
 
 extension WidgetExtension on Widget {
-  Widget fadeAnimation(double delay) {
-    return FadeAnimation(delay: delay, child: this);
-  }
+  Widget fadeAnimation(double delay) => FadeAnimation(delay: delay, child: this);
 }
 
 extension IterableExtension on List<Food> {
