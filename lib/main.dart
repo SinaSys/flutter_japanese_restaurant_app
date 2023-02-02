@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'dart:ui' show PointerDeviceKind;
 import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
 import 'package:flutter_japanese_restaurant_app/src/presentation/screen/home_screen.dart';
 import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/food/food_provider.dart';
@@ -33,6 +34,12 @@ class MyApp extends StatelessWidget {
       child: Consumer<ThemeProvider>(
         builder: (_, themeProvider, __) => MaterialApp(
           debugShowCheckedModeBanner: false,
+          scrollBehavior: const MaterialScrollBehavior().copyWith(
+            dragDevices: {
+              PointerDeviceKind.mouse,
+              PointerDeviceKind.touch,
+            },
+          ),
           theme: themeProvider.state.theme,
           home: HomeScreen(),
         ),
