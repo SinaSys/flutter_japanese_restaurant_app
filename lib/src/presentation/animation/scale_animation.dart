@@ -6,10 +6,10 @@ class ScaleAnimation extends StatefulWidget {
   final Widget child;
 
   @override
-  _ScaleAnimationState createState() => _ScaleAnimationState();
+  ScaleAnimationState createState() => ScaleAnimationState();
 }
 
-class _ScaleAnimationState extends State<ScaleAnimation>
+class ScaleAnimationState extends State<ScaleAnimation>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;

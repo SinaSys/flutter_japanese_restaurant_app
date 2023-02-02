@@ -47,10 +47,10 @@ class FoodDetailScreen extends StatelessWidget {
       return FloatingActionButton(
         elevation: 0.0,
         backgroundColor: LightThemeColor.accent,
+        onPressed: onPressed,
         child: foodList[foodList.getIndex(food)].isFavorite
             ? const Icon(AppIcon.heart)
             : const Icon(AppIcon.outlinedHeart),
-        onPressed: onPressed,
       );
     }
 
