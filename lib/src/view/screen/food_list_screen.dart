@@ -31,7 +31,7 @@ class FoodListScreen extends StatelessWidget {
         IconButton(
           onPressed: () {},
           icon: Badge(
-            badgeColor: LightThemeColor.accent,
+            badgeStyle: const BadgeStyle(badgeColor: LightThemeColor.accent),
             badgeContent: const Text(
               "2",
               style: TextStyle(color: Colors.white),
