@@ -8,17 +8,22 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: LightThemeColor.primaryLight,
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: LightThemeColor.accent),
+      backgroundColor: LightThemeColor.accent,
+    ),
     appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black45),
-        centerTitle: true,
-        titleTextStyle: h2Style),
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      iconTheme: IconThemeData(color: Colors.black45),
+      centerTitle: true,
+      titleTextStyle: h2Style,
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(LightThemeColor.accent),
-    )),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(
+          LightThemeColor.accent,
+        ),
+      ),
+    ),
     hintColor: Colors.black45,
     inputDecorationTheme: InputDecorationTheme(
       border: const OutlineInputBorder(borderSide: BorderSide.none),
@@ -30,9 +35,10 @@ class AppTheme {
     ),
     bottomAppBarColor: Colors.white,
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        selectedItemColor: LightThemeColor.accent),
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: Colors.white,
+      selectedItemColor: LightThemeColor.accent,
+    ),
     textTheme: const TextTheme(
       headline1: h1Style,
       headline2: h2Style,
@@ -49,19 +55,23 @@ class AppTheme {
       canvasColor: DarkThemeColor.primaryDark,
       scaffoldBackgroundColor: DarkThemeColor.primaryDark,
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
-          backgroundColor: LightThemeColor.accent),
+        backgroundColor: LightThemeColor.accent,
+      ),
       appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          toolbarTextStyle: TextStyle(color: Colors.white),
-          centerTitle: true,
-          iconTheme: IconThemeData(color: Colors.white),
-          titleTextStyle: h2Style),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        toolbarTextStyle: TextStyle(color: Colors.white),
+        centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.white),
+        titleTextStyle: h2Style,
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ButtonStyle(
-        backgroundColor:
-            MaterialStateProperty.all<Color>(LightThemeColor.accent),
-      )),
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(
+            LightThemeColor.accent,
+          ),
+        ),
+      ),
       hintColor: Colors.white60,
       inputDecorationTheme: InputDecorationTheme(
         enabledBorder: textFieldStyle,
@@ -72,10 +82,11 @@ class AppTheme {
       ),
       bottomAppBarColor: DarkThemeColor.primaryLight,
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: DarkThemeColor.primaryLight,
-          selectedItemColor: LightThemeColor.accent,
-          unselectedItemColor: Colors.white70),
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: DarkThemeColor.primaryLight,
+        selectedItemColor: LightThemeColor.accent,
+        unselectedItemColor: Colors.white70,
+      ),
       textTheme: TextTheme(
         headline1: h1Style.copyWith(color: Colors.white),
         headline2: h2Style.copyWith(color: Colors.white),

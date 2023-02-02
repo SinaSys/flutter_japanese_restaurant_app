@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_data.dart';
-import 'package:flutter_japanese_restaurant_app/src/view/widget/page_transition.dart';
 import 'package:flutter_japanese_restaurant_app/src/view/screen/cart_screen.dart';
-import 'package:flutter_japanese_restaurant_app/src/controller/food_controller.dart';
 import 'package:flutter_japanese_restaurant_app/src/view/screen/profile_screen.dart';
+import 'package:flutter_japanese_restaurant_app/src/controller/food_controller.dart';
 import 'package:flutter_japanese_restaurant_app/src/view/screen/favorite_screen.dart';
+import 'package:flutter_japanese_restaurant_app/src/view/widget/page_transition.dart';
 import 'package:flutter_japanese_restaurant_app/src/view/screen/food_list_screen.dart';
 
 final FoodController controller = Get.put(FoodController());
@@ -36,9 +36,10 @@ class HomeScreen extends StatelessWidget {
           items: AppData.bottomNavigationItems.map(
             (element) {
               return BottomNavigationBarItem(
-                  icon: element.disableIcon,
-                  label: element.label,
-                  activeIcon: element.enableIcon);
+                icon: element.disableIcon,
+                label: element.label,
+                activeIcon: element.enableIcon,
+              );
             },
           ).toList(),
         );

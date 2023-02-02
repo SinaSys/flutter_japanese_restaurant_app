@@ -9,7 +9,7 @@ extension IterableWithIndex<T> on Iterable<T> {
   Iterable<T> distinctBy(Object Function(T e) getCompareValue) {
     var result = <T>[];
     forEach(
-      (element) {
+          (element) {
         if (!result
             .any((x) => getCompareValue(x) == getCompareValue(element))) {
           result.add(element);

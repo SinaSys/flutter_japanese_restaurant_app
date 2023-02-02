@@ -46,8 +46,10 @@ class CartScreen extends StatelessWidget {
                         Text("Subtotal",
                             style: Theme.of(context).textTheme.headline5),
                         Obx(() {
-                          return Text("\$${controller.subtotalPrice.value}",
-                              style: Theme.of(context).textTheme.headline2);
+                          return Text(
+                            "\$${controller.subtotalPrice.value}",
+                            style: Theme.of(context).textTheme.headline2,
+                          );
                         }),
                       ],
                     ),
@@ -58,34 +60,38 @@ class CartScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Taxes",
-                            style: Theme.of(context).textTheme.headline5),
-                        Text("\$${5.00}",
-                            style: Theme.of(context).textTheme.headline2),
+                        Text(
+                          "Taxes",
+                          style: Theme.of(context).textTheme.headline5,
+                        ),
+                        Text(
+                          "\$${5.00}",
+                          style: Theme.of(context).textTheme.headline2,
+                        ),
                       ],
                     ),
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Divider(
-                      thickness: 4.0,
-                      height: 30.0,
-                    ),
+                    child: Divider(thickness: 4.0, height: 30.0),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Total",
-                            style: Theme.of(context).textTheme.headline2),
+                        Text(
+                          "Total",
+                          style: Theme.of(context).textTheme.headline2,
+                        ),
                         Obx(() {
                           return Text(
                             controller.totalPrice.value == 5.0
                                 ? "\$0.0"
                                 : "\$${controller.totalPrice}",
-                            style:
-                                h2Style.copyWith(color: LightThemeColor.accent),
+                            style: h2Style.copyWith(
+                              color: LightThemeColor.accent,
+                            ),
                           );
                         }),
                       ],
@@ -96,9 +102,12 @@ class CartScreen extends StatelessWidget {
                     width: double.infinity,
                     height: 45,
                     child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: width * 0.1),
-                        child: ElevatedButton(
-                            onPressed: () {}, child: const Text("Checkout"))),
+                      padding: EdgeInsets.symmetric(horizontal: width * 0.1),
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text("Checkout"),
+                      ),
+                    ),
                   )
                 ],
               ),
@@ -125,12 +134,14 @@ class CartScreen extends StatelessWidget {
           background: Row(
             children: [
               Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
-                  decoration: BoxDecoration(
-                      color: Colors.redAccent,
-                      borderRadius: BorderRadius.circular(15)),
-                  child: const FaIcon(FontAwesomeIcons.trash)),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
+                decoration: BoxDecoration(
+                  color: Colors.redAccent,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: const FaIcon(FontAwesomeIcons.trash),
+              ),
             ],
           ),
           child: Container(
@@ -209,9 +220,7 @@ class CartScreen extends StatelessWidget {
           child: SizedBox(
             height: height * 0.5,
             child: GetBuilder(
-              builder: (FoodController controller) {
-                return cartListView(context);
-              },
+              builder: (FoodController controller) => cartListView(context),
             ),
           ),
         ),

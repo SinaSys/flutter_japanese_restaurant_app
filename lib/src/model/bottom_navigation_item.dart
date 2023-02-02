@@ -6,6 +6,10 @@ class BottomNavigationItem {
   String label;
   bool isSelected;
 
-  BottomNavigationItem(this.disableIcon, this.enableIcon, this.label,
-      {this.isSelected = false});
+  BottomNavigationItem(
+    this.disableIcon,
+    this.enableIcon,
+    this.label, {
+    this.isSelected = false,
+  });
 }
