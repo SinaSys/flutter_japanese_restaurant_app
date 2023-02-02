@@ -32,7 +32,7 @@ dependencies:
   font_awesome_flutter: ^10.3.0
   badges: ^3.0.2
   animations: ^2.0.7
-  simple_animations: ^4.0.1
+  simple_animations: ^5.0.0+3
   equatable: ^2.0.5
   flutter_hooks: ^0.18.5+1
   provider: ^6.0.5
