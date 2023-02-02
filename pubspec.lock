@@ -21,7 +21,7 @@ packages:
       name: badges
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.3"
+    version: "3.0.2"
   bloc:
     dependency: transitive
     description:
