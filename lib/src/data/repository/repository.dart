@@ -4,7 +4,7 @@ import 'package:flutter_japanese_restaurant_app/src/data/model/food_category.dar
 
 class Repository {
   get getFoodList {
-    const _dummyText =
+    const dummyText =
         "Lorem Ipsum is simply dummy text of the printing and typesetting "
         "industry. Lorem Ipsum has been the industry's standard dummy text ever "
         "since the 1500s, when an unknown printer took a galley of type and "
@@ -15,13 +15,13 @@ class Repository {
         "with desktop publishing software like Aldus PageMaker including versions "
         "of Lorem Ipsum.";
 
-    const List<Food> _foodItems = [
+    const List<Food> foodItems = [
       Food(
           id: 1,
           image: AppAsset.sushi1,
           name: "Sushi1",
           price: 10.0,
-          description: _dummyText,
+          description: dummyText,
           score: 5.0,
           type: FoodType.sushi,
           voter: 150),
@@ -30,7 +30,7 @@ class Repository {
           image: AppAsset.sushi2,
           name: "Sushi2",
           price: 15.0,
-          description: _dummyText,
+          description: dummyText,
           score: 3.5,
           type: FoodType.sushi,
           voter: 652),
@@ -39,7 +39,7 @@ class Repository {
           image: AppAsset.sushi3,
           name: "Sushi3",
           price: 20.0,
-          description: _dummyText,
+          description: dummyText,
           score: 4.0,
           type: FoodType.sushi,
           voter: 723),
@@ -48,7 +48,7 @@ class Repository {
           image: AppAsset.sushi4,
           name: "Sushi4",
           price: 40.0,
-          description: _dummyText,
+          description: dummyText,
           score: 2.5,
           type: FoodType.kebab,
           voter: 456),
@@ -57,7 +57,7 @@ class Repository {
           image: AppAsset.sushi5,
           name: "Sushi5",
           price: 10.0,
-          description: _dummyText,
+          description: dummyText,
           score: 4.5,
           type: FoodType.kebab,
           voter: 650),
@@ -66,7 +66,7 @@ class Repository {
           image: AppAsset.sushi6,
           name: "Sushi6",
           price: 20.0,
-          description: _dummyText,
+          description: dummyText,
           score: 1.5,
           type: FoodType.burger,
           voter: 350),
@@ -75,7 +75,7 @@ class Repository {
           image: AppAsset.sushi7,
           name: "sushi7",
           price: 12.0,
-          description: _dummyText,
+          description: dummyText,
           score: 3.5,
           type: FoodType.burger,
           voter: 265),
@@ -84,7 +84,7 @@ class Repository {
           image: AppAsset.sushi8,
           name: "sushi8",
           price: 30.0,
-          description: _dummyText,
+          description: dummyText,
           score: 4.0,
           type: FoodType.ramen,
           voter: 890),
@@ -93,7 +93,7 @@ class Repository {
           image: AppAsset.sushi9,
           name: "sushi9",
           price: 10.0,
-          description: _dummyText,
+          description: dummyText,
           score: 5.0,
           type: FoodType.ramen,
           voter: 900),
@@ -102,7 +102,7 @@ class Repository {
           image: AppAsset.sushi10,
           name: "sushi10",
           price: 15.0,
-          description: _dummyText,
+          description: dummyText,
           score: 3.5,
           type: FoodType.ramen,
           voter: 420),
@@ -111,7 +111,7 @@ class Repository {
           image: AppAsset.sushi11,
           name: "sushi11",
           price: 25.0,
-          description: _dummyText,
+          description: dummyText,
           score: 3.0,
           type: FoodType.tempura,
           voter: 263),
@@ -120,13 +120,13 @@ class Repository {
           image: AppAsset.sushi12,
           name: "sushi12",
           price: 20.0,
-          description: _dummyText,
+          description: dummyText,
           score: 5.0,
           type: FoodType.tempura,
           voter: 560),
     ];
 
-    return _foodItems;
+    return foodItems;
   }
 
   get getCategories {

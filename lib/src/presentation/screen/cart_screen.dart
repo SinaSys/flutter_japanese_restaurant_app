@@ -119,7 +119,7 @@ class CartScreen extends StatelessWidget {
       );
     }
 
-    Widget _bottomAppBar() {
+    Widget bottomAppBar() {
       return BottomAppBar(
         child: SizedBox(
           height: height * 0.32,
@@ -213,7 +213,7 @@ class CartScreen extends StatelessWidget {
 
     return Scaffold(
       bottomNavigationBar:
-          cartFood.isNotEmpty ? _bottomAppBar() : const SizedBox(),
+          cartFood.isNotEmpty ? bottomAppBar() : const SizedBox(),
       appBar: _appBar(context),
       body: EmptyWidget(
         title: "Empty cart",
