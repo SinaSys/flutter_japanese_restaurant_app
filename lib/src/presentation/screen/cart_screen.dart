@@ -113,7 +113,7 @@ class CartScreen extends StatelessWidget {
             ).fadeAnimation(index * 0.6),
           );
         },
-        separatorBuilder: (BuildContext context, int index) {
+        separatorBuilder: (_, __) {
           return const Padding(padding: EdgeInsets.all(10));
         },
       );
@@ -140,10 +140,14 @@ class CartScreen extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Subtotal",
-                              style: Theme.of(context).textTheme.headline5),
-                          Text("\$${totalPrice - 5}",
-                              style: Theme.of(context).textTheme.headline2),
+                          Text(
+                            "Subtotal",
+                            style: Theme.of(context).textTheme.headline5,
+                          ),
+                          Text(
+                            "\$${totalPrice - 5}",
+                            style: Theme.of(context).textTheme.headline2,
+                          ),
                         ],
                       ),
                     ),
@@ -153,31 +157,35 @@ class CartScreen extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Taxes",
-                              style: Theme.of(context).textTheme.headline5),
-                          Text("\$${5.00}",
-                              style: Theme.of(context).textTheme.headline4),
+                          Text(
+                            "Taxes",
+                            style: Theme.of(context).textTheme.headline5,
+                          ),
+                          Text(
+                            "\$${5.00}",
+                            style: Theme.of(context).textTheme.headline4,
+                          ),
                         ],
                       ),
                     ),
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Divider(
-                        thickness: 4.0,
-                        height: 30.0,
-                      ),
+                      child: Divider(thickness: 4.0, height: 30.0),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Total",
-                              style: Theme.of(context).textTheme.headline2),
+                          Text(
+                            "Total",
+                            style: Theme.of(context).textTheme.headline2,
+                          ),
                           Text(
                             totalPrice == 5.0 ? "\$0.0" : "\$$totalPrice",
-                            style:
-                                h2Style.copyWith(color: LightThemeColor.accent),
+                            style: h2Style.copyWith(
+                              color: LightThemeColor.accent,
+                            ),
                           )
                         ],
                       ),
@@ -187,10 +195,12 @@ class CartScreen extends StatelessWidget {
                       width: double.infinity,
                       height: 45,
                       child: Padding(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: width * 0.1),
-                          child: ElevatedButton(
-                              onPressed: () {}, child: const Text("Checkout"))),
+                        padding: EdgeInsets.symmetric(horizontal: width * 0.1),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text("Checkout"),
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -209,10 +219,7 @@ class CartScreen extends StatelessWidget {
         title: "Empty cart",
         condition: cartFood.isNotEmpty,
         child: SingleChildScrollView(
-          child: SizedBox(
-            height: height * 0.5,
-            child: cartListView(),
-          ),
+          child: SizedBox(height: height * 0.5, child: cartListView()),
         ),
       ),
     );

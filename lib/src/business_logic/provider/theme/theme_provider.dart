@@ -11,11 +11,13 @@ class ThemeProvider extends ChangeNotifier {
 
   switchTheme() {
     if (_state.theme == AppThemes.appThemeData[AppTheme.lightTheme]) {
-      _state =
-          _state.copyWith(theme: AppThemes.appThemeData[AppTheme.darkTheme]!);
+      _state = _state.copyWith(
+        theme: AppThemes.appThemeData[AppTheme.darkTheme]!,
+      );
     } else {
-      _state =
-          _state.copyWith(theme: AppThemes.appThemeData[AppTheme.lightTheme]!);
+      _state = _state.copyWith(
+        theme: AppThemes.appThemeData[AppTheme.lightTheme]!,
+      );
     }
     notifyListeners();
   }

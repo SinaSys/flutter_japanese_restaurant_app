@@ -7,23 +7,17 @@ class FoodCategory extends Equatable {
   final FoodType type;
   final bool isSelected;
 
+  const FoodCategory({required this.type, required this.isSelected});
+
   @override
   List<Object?> get props => [type, isSelected];
 
-  FoodCategory copyWith({
-    FoodType? type,
-    bool? isSelected,
-  }) {
+  FoodCategory copyWith({FoodType? type, bool? isSelected}) {
     return FoodCategory(
       type: type ?? this.type,
       isSelected: isSelected ?? this.isSelected,
     );
   }
-
-  const FoodCategory({
-    required this.type,
-    required this.isSelected,
-  });
 
   @override
   String toString() {

@@ -9,10 +9,11 @@ class CategoryProvider with ChangeNotifier {
 
   Repository repository;
 
-  CategoryProvider({
-    required this.repository,
-  }) : _state = CategoryState.initial(
-            repository.getFoodList, repository.getCategories);
+  CategoryProvider({required this.repository})
+      : _state = CategoryState.initial(
+          repository.getFoodList,
+          repository.getCategories,
+        );
 
   CategoryState get state => _state;
 

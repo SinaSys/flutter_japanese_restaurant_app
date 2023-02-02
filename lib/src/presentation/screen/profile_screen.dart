@@ -12,10 +12,7 @@ class ProfileScreen extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(30),
-            child: Image.asset(
-              AppAsset.profileImage,
-              width: 300,
-            ),
+            child: Image.asset(AppAsset.profileImage, width: 300),
           ),
           Text(
             "Hello Sina!",
@@ -24,10 +21,7 @@ class ProfileScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                AppAsset.githubImage,
-                width: 60,
-              ),
+              Image.asset(AppAsset.githubImage, width: 60),
               const SizedBox(width: 10),
               Text(
                 "https://github.com/SinaSys",

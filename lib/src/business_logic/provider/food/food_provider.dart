@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart' show ChangeNotifier;
-import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
+import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/repository/repository.dart';
 import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/food/food_state.dart';
 
@@ -34,8 +34,9 @@ class FoodProvider with ChangeNotifier {
 
     final List<Food> foodList = _state.foodList.map((element) {
       if (element.id == food.id && element.quantity > 1) {
-        return _state.foodList[index]
-            .copyWith(quantity: _state.foodList[index].quantity - 1);
+        return _state.foodList[index].copyWith(
+          quantity: _state.foodList[index].quantity - 1,
+        );
       }
       //for Item quantity less than zero this statement will be called
       if (element.id == food.id) {
