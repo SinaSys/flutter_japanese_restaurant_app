@@ -17,7 +17,7 @@ class CartScreen extends StatelessWidget {
     return AppBar(
       title: Text(
         "Cart screen",
-        style: Theme.of(context).textTheme.headline2,
+        style: Theme.of(context).textTheme.displayMedium,
       ),
     );
   }
@@ -43,12 +43,14 @@ class CartScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Subtotal",
-                            style: Theme.of(context).textTheme.headline5),
+                        Text(
+                          "Subtotal",
+                          style: Theme.of(context).textTheme.headlineSmall,
+                        ),
                         Obx(() {
                           return Text(
                             "\$${controller.subtotalPrice.value}",
-                            style: Theme.of(context).textTheme.headline2,
+                            style: Theme.of(context).textTheme.displayMedium,
                           );
                         }),
                       ],
@@ -62,11 +64,11 @@ class CartScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Taxes",
-                          style: Theme.of(context).textTheme.headline5,
+                          style: Theme.of(context).textTheme.headlineSmall,
                         ),
                         Text(
                           "\$${5.00}",
-                          style: Theme.of(context).textTheme.headline2,
+                          style: Theme.of(context).textTheme.displayMedium,
                         ),
                       ],
                     ),
@@ -82,7 +84,7 @@ class CartScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Total",
-                          style: Theme.of(context).textTheme.headline2,
+                          style: Theme.of(context).textTheme.displayMedium,
                         ),
                         Obx(() {
                           return Text(
@@ -134,8 +136,10 @@ class CartScreen extends StatelessWidget {
           background: Row(
             children: [
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                  vertical: 25,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.redAccent,
                   borderRadius: BorderRadius.circular(15),
@@ -163,12 +167,12 @@ class CartScreen extends StatelessWidget {
                   children: [
                     Text(
                       controller.cartFood[index].name,
-                      style: Theme.of(context).textTheme.headline2,
+                      style: Theme.of(context).textTheme.displayMedium,
                     ),
                     const SizedBox(height: 5),
                     Text(
                       "\$${controller.cartFood[index].price}",
-                      style: Theme.of(context).textTheme.headline5,
+                      style: Theme.of(context).textTheme.headlineSmall,
                     ),
                   ],
                 ),
@@ -184,7 +188,7 @@ class CartScreen extends StatelessWidget {
                       padding: 0,
                       label: Text(
                         controller.cartFood[index].quantity.toString(),
-                        style: Theme.of(context).textTheme.headline2,
+                        style: Theme.of(context).textTheme.displayMedium,
                       ),
                     ),
                     Text(
@@ -198,9 +202,7 @@ class CartScreen extends StatelessWidget {
           ).fadeAnimation(index * 0.6),
         );
       },
-      separatorBuilder: (BuildContext context, int index) {
-        return const Padding(padding: EdgeInsets.all(10));
-      },
+      separatorBuilder: (_, __) => const Padding(padding: EdgeInsets.all(10)),
     );
   }
 
