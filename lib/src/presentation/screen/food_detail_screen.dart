@@ -103,12 +103,12 @@ class FoodDetailScreen extends StatelessWidget {
                         const SizedBox(width: 15),
                         Text(
                           food.score.toString(),
-                          style: Theme.of(context).textTheme.subtitle1,
+                          style: Theme.of(context).textTheme.titleMedium,
                         ),
                         const SizedBox(width: 5),
                         Text(
                           "(${food.voter})",
-                          style: Theme.of(context).textTheme.subtitle1,
+                          style: Theme.of(context).textTheme.titleMedium,
                         )
                       ],
                     ).fadeAnimation(0.4),
@@ -120,7 +120,7 @@ class FoodDetailScreen extends StatelessWidget {
                           "\$${food.price}",
                           style: Theme.of(context)
                               .textTheme
-                              .headline1
+                              .displayLarge
                               ?.copyWith(color: LightThemeColor.accent),
                         ),
                         BlocBuilder<FoodBloc, FoodState>(
@@ -136,7 +136,7 @@ class FoodDetailScreen extends StatelessWidget {
                                 state.foodList[state.foodList.getIndex(food)]
                                     .quantity
                                     .toString(),
-                                style: Theme.of(context).textTheme.headline1,
+                                style: Theme.of(context).textTheme.displayLarge,
                               ),
                             );
                           },
@@ -146,12 +146,12 @@ class FoodDetailScreen extends StatelessWidget {
                     const SizedBox(height: 15),
                     Text(
                       "Description",
-                      style: Theme.of(context).textTheme.headline2,
+                      style: Theme.of(context).textTheme.displayMedium,
                     ).fadeAnimation(0.8),
                     const SizedBox(height: 15),
                     Text(
                       food.description,
-                      style: Theme.of(context).textTheme.subtitle1,
+                      style: Theme.of(context).textTheme.titleMedium,
                     ).fadeAnimation(0.8),
                     const SizedBox(height: 30),
                     SizedBox(
