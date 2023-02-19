@@ -61,7 +61,7 @@ class FoodListView extends StatelessWidget {
                       food.name,
                       style: Theme.of(context)
                           .textTheme
-                          .headline4
+                          .headlineMedium
                           ?.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ],

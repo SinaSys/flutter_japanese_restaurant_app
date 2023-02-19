@@ -18,7 +18,7 @@ class FavoriteScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Favorite screen",
-          style: Theme.of(context).textTheme.headline2,
+          style: Theme.of(context).textTheme.displayMedium,
         ),
       ),
       body: EmptyWidget(
@@ -40,19 +40,19 @@ class FavoriteScreen extends StatelessWidget {
               child: ListTile(
                 title: Text(
                   food.name,
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 leading: Image.asset(food.image),
                 subtitle: Text(
                   food.description,
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 trailing: const Icon(AppIcon.heart, color: Colors.redAccent),
               ),
             ).fadeAnimation(index * 0.6);
           },
-          separatorBuilder: (_,__) {
+          separatorBuilder: (_, __) {
             return const Padding(padding: EdgeInsets.only(bottom: 15));
           },
         ),

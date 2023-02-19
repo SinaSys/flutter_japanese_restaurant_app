@@ -16,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           Text(
             "Hello Sina!",
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.displayLarge,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -25,7 +25,7 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(width: 10),
               Text(
                 "https://github.com/SinaSys",
-                style: Theme.of(context).textTheme.headline3,
+                style: Theme.of(context).textTheme.displaySmall,
               )
             ],
           )

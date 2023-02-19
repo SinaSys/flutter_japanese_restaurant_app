@@ -29,7 +29,7 @@ class EmptyWidget extends StatelessWidget {
                     ? Image.asset(AppAsset.emptyCart, width: 300)
                     : Image.asset(AppAsset.emptyFavorite, width: 300),
                 const SizedBox(height: 10),
-                Text(title, style: Theme.of(context).textTheme.headline2)
+                Text(title, style: Theme.of(context).textTheme.displayMedium)
               ],
             ),
           );
