@@ -31,7 +31,7 @@ class EmptyWidget extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   title,
-                  style: Theme.of(context).textTheme.headline2,
+                  style: Theme.of(context).textTheme.displayMedium,
                 )
               ],
             ),

@@ -18,7 +18,7 @@ class CartScreen extends StatelessWidget {
     return AppBar(
       title: Text(
         "Cart screen",
-        style: Theme.of(context).textTheme.headline2,
+        style: Theme.of(context).textTheme.displayMedium,
       ),
     );
   }
@@ -76,12 +76,12 @@ class CartScreen extends StatelessWidget {
                     children: [
                       Text(
                         cartFood[index].name,
-                        style: Theme.of(context).textTheme.headline2,
+                        style: Theme.of(context).textTheme.displayMedium,
                       ),
                       const SizedBox(height: 5),
                       Text(
                         "\$${cartFood[index].price}",
-                        style: Theme.of(context).textTheme.headline5,
+                        style: Theme.of(context).textTheme.headlineSmall,
                       ),
                     ],
                   ),
@@ -99,7 +99,7 @@ class CartScreen extends StatelessWidget {
                         padding: 0,
                         label: Text(
                           cartFood[index].quantity.toString(),
-                          style: Theme.of(context).textTheme.headline2,
+                          style: Theme.of(context).textTheme.displayMedium,
                         ),
                       ),
                       Text(
@@ -142,11 +142,11 @@ class CartScreen extends StatelessWidget {
                         children: [
                           Text(
                             "Subtotal",
-                            style: Theme.of(context).textTheme.headline5,
+                            style: Theme.of(context).textTheme.headlineSmall,
                           ),
                           Text(
                             "\$${totalPrice - 5}",
-                            style: Theme.of(context).textTheme.headline2,
+                            style: Theme.of(context).textTheme.displayMedium,
                           ),
                         ],
                       ),
@@ -159,11 +159,11 @@ class CartScreen extends StatelessWidget {
                         children: [
                           Text(
                             "Taxes",
-                            style: Theme.of(context).textTheme.headline5,
+                            style: Theme.of(context).textTheme.headlineSmall,
                           ),
                           Text(
                             "\$${5.00}",
-                            style: Theme.of(context).textTheme.headline4,
+                            style: Theme.of(context).textTheme.headlineMedium,
                           ),
                         ],
                       ),
@@ -179,7 +179,7 @@ class CartScreen extends StatelessWidget {
                         children: [
                           Text(
                             "Total",
-                            style: Theme.of(context).textTheme.headline2,
+                            style: Theme.of(context).textTheme.displayMedium,
                           ),
                           Text(
                             totalPrice == 5.0 ? "\$0.0" : "\$$totalPrice",

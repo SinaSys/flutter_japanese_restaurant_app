@@ -1,5 +1,5 @@
 import 'package:badges/badges.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Badge;
 import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_color.dart';
@@ -24,7 +24,7 @@ class FoodListScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Icon(Icons.location_on_outlined, color: LightThemeColor.accent),
-          Text("Location", style: Theme.of(context).textTheme.bodyText1)
+          Text("Location", style: Theme.of(context).textTheme.bodyLarge)
         ],
       ),
       actions: [
@@ -77,16 +77,16 @@ class FoodListScreen extends StatelessWidget {
             children: [
               Text(
                 "Morning, Sina",
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineSmall,
               ).fadeAnimation(0.2),
               Text(
                 "What do you want to eat \ntoday",
-                style: Theme.of(context).textTheme.headline1,
+                style: Theme.of(context).textTheme.displayLarge,
               ).fadeAnimation(0.4),
               _searchBar(),
               Text(
                 "Available for you",
-                style: Theme.of(context).textTheme.headline3,
+                style: Theme.of(context).textTheme.displaySmall,
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15),
@@ -115,7 +115,7 @@ class FoodListScreen extends StatelessWidget {
                           ),
                           child: Text(
                             category.type.name.toCapital,
-                            style: Theme.of(context).textTheme.headline4,
+                            style: Theme.of(context).textTheme.headlineMedium,
                           ),
                         ),
                       );
@@ -134,7 +134,7 @@ class FoodListScreen extends StatelessWidget {
                   children: [
                     Text(
                       "Best food of the week",
-                      style: Theme.of(context).textTheme.headline3,
+                      style: Theme.of(context).textTheme.displaySmall,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20),
@@ -142,7 +142,7 @@ class FoodListScreen extends StatelessWidget {
                         "See all",
                         style: Theme.of(context)
                             .textTheme
-                            .headline4
+                            .headlineMedium
                             ?.copyWith(color: LightThemeColor.accent),
                       ),
                     ),
