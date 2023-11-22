@@ -10,7 +10,7 @@ import 'package:flutter_japanese_restaurant_app/src/controller/food_controller.d
 final FoodController controller = Get.put(FoodController());
 
 class FavoriteScreen extends StatelessWidget {
-  const FavoriteScreen({Key? key}) : super(key: key);
+  const FavoriteScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

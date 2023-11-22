@@ -11,7 +11,7 @@ import 'package:flutter_japanese_restaurant_app/src/view/screen/food_list_screen
 final FoodController controller = Get.put(FoodController());
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({super.key});
 
   final List<Widget> screen = [
     const FoodListScreen(),

@@ -12,7 +12,7 @@ import 'package:flutter_japanese_restaurant_app/src/view/widget/food_list_view.d
 final FoodController controller = Get.put(FoodController());
 
 class FoodListScreen extends StatelessWidget {
-  const FoodListScreen({Key? key}) : super(key: key);
+  const FoodListScreen({super.key});
 
   PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
