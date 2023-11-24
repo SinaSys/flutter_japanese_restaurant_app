@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ScaleAnimation extends StatefulWidget {
-  const ScaleAnimation({Key? key, required this.child}) : super(key: key);
+  const ScaleAnimation({
+    super.key,
+    required this.child,
+  });
 
   final Widget child;
 

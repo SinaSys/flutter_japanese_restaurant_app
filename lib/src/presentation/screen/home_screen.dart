@@ -8,7 +8,7 @@ import 'package:flutter_japanese_restaurant_app/src/presentation/screen/food_lis
 import 'package:flutter_japanese_restaurant_app/src/presentation/animation/page_transition.dart';
 
 class HomeScreen extends HookWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({super.key});
 
   final List<Widget> screen = [
     const FoodListScreen(),
