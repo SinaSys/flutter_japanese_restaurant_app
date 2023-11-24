@@ -26,16 +26,14 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.5
-  flutter_lints: ^2.0.1
   flutter_rating_bar: ^4.0.1
-  font_awesome_flutter: ^10.3.0
-  badges: ^3.0.2
-  animations: ^2.0.7
-  simple_animations: ^5.0.0+3
+  font_awesome_flutter: ^10.6.0
+  badges: ^3.1.2
+  animations: ^2.0.8
+  simple_animations: ^5.0.2
   equatable: ^2.0.5
-  flutter_hooks: ^0.18.5+1
-  provider: ^6.0.5
+  flutter_hooks: ^0.20.3
+  provider: ^6.1.1
 
 dev_dependencies:
   flutter_test:
