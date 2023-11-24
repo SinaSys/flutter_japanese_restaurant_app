@@ -9,7 +9,7 @@ import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/food/fo
 import 'package:flutter_japanese_restaurant_app/src/presentation/widget/empty_widget.dart';
 
 class FavoriteScreen extends StatelessWidget {
-  const FavoriteScreen({Key? key}) : super(key: key);
+  const FavoriteScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

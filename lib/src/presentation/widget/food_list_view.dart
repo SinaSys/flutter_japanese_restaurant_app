@@ -10,10 +10,10 @@ import 'package:flutter_japanese_restaurant_app/src/presentation/widget/custom_p
 
 class FoodListView extends StatelessWidget {
   const FoodListView({
-    Key? key,
+    super.key,
     required this.foods,
     this.isReversedList = false,
-  }) : super(key: key);
+  });
 
   final List<Food> foods;
   final bool isReversedList;

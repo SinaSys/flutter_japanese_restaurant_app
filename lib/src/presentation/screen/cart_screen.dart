@@ -11,7 +11,7 @@ import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/food/fo
 import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/theme/theme_bloc.dart';
 
 class CartScreen extends StatelessWidget {
-  const CartScreen({Key? key}) : super(key: key);
+  const CartScreen({super.key});
 
   PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(

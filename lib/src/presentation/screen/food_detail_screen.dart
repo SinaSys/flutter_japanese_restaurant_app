@@ -12,7 +12,10 @@ import 'package:flutter_japanese_restaurant_app/src/business_logic/blocs/theme/t
 import 'package:flutter_japanese_restaurant_app/src/presentation/animation/scale_animation.dart';
 
 class FoodDetailScreen extends StatelessWidget {
-  const FoodDetailScreen({Key? key, required this.food}) : super(key: key);
+  const FoodDetailScreen({
+    super.key,
+    required this.food,
+  });
 
   final Food food;
 
