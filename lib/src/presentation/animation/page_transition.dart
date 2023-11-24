@@ -2,7 +2,10 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
 class PageTransition extends StatelessWidget {
-  const PageTransition({Key? key, required this.child}) : super(key: key);
+  const PageTransition({
+    super.key,
+    required this.child,
+  });
 
   final Widget child;
 

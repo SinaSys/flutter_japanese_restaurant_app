@@ -10,14 +10,14 @@ class CounterButton extends StatelessWidget {
   final double padding;
 
   const CounterButton({
-    Key? key,
+    super.key,
     required this.onIncrementSelected,
     required this.onDecrementSelected,
     required this.label,
     this.padding = 10.0,
     this.size = const Size(36, 36),
     this.orientation = Axis.horizontal,
-  }) : super(key: key);
+  });
 
   Widget button(Icon icon, Function() onTap) {
     return RawMaterialButton(

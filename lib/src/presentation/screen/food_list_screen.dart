@@ -12,7 +12,7 @@ import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/them
 import 'package:flutter_japanese_restaurant_app/src/business_logic/provider/category/category_provider.dart';
 
 class FoodListScreen extends StatelessWidget {
-  const FoodListScreen({Key? key}) : super(key: key);
+  const FoodListScreen({super.key});
 
   PreferredSizeWidget _appBar(BuildContext context) {
     return AppBar(
