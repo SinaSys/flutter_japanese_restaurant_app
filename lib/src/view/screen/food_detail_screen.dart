@@ -161,7 +161,7 @@ class FoodDetailScreen extends StatelessWidget {
               ),
             ),
             Positioned(
-                bottom: 0,
+                bottom: 10,
                 left: width * 0.1,
                 right: width * 0.1,
                 child: SizedBox(
