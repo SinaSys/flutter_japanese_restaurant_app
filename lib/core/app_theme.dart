@@ -6,6 +6,7 @@ class AppTheme {
   const AppTheme._();
 
   static ThemeData lightTheme = ThemeData(
+    useMaterial3: false,
     scaffoldBackgroundColor: LightThemeColor.primaryLight,
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: LightThemeColor.accent,
@@ -52,6 +53,7 @@ class AppTheme {
   );
 
   static ThemeData darkTheme = ThemeData(
+    useMaterial3: false,
     canvasColor: DarkThemeColor.primaryDark,
     scaffoldBackgroundColor: DarkThemeColor.primaryDark,
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
