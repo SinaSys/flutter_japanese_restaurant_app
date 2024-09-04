@@ -9,6 +9,7 @@ class AppThemes {
 
   static final appThemeData = {
     AppTheme.lightTheme: ThemeData(
+      useMaterial3: false,
       scaffoldBackgroundColor: LightThemeColor.primaryLight,
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: LightThemeColor.accent,
@@ -22,7 +23,7 @@ class AppThemes {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(
+          backgroundColor: WidgetStateProperty.all<Color>(
             LightThemeColor.accent,
           ),
         ),
@@ -54,6 +55,7 @@ class AppThemes {
       bottomAppBarTheme: const BottomAppBarTheme(color: Colors.white),
     ),
     AppTheme.darkTheme: ThemeData(
+      useMaterial3: false,
       canvasColor: DarkThemeColor.primaryDark,
       scaffoldBackgroundColor: DarkThemeColor.primaryDark,
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -69,7 +71,7 @@ class AppThemes {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(
+          backgroundColor: WidgetStateProperty.all<Color>(
             LightThemeColor.accent,
           ),
         ),
