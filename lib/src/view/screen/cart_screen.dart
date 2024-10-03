@@ -17,7 +17,7 @@ class CartScreen extends StatelessWidget {
     return AppBar(
       title: Text(
         "Cart screen",
-        style: Theme.of(context).textTheme.displayMedium,
+        style: context.displayMedium,
       ),
     );
   }
@@ -45,12 +45,12 @@ class CartScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Subtotal",
-                          style: Theme.of(context).textTheme.headlineSmall,
+                          style: context.headlineSmall,
                         ),
                         Obx(() {
                           return Text(
                             "\$${controller.subtotalPrice.value}",
-                            style: Theme.of(context).textTheme.displayMedium,
+                            style: context.displayMedium,
                           );
                         }),
                       ],
@@ -64,11 +64,11 @@ class CartScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Taxes",
-                          style: Theme.of(context).textTheme.headlineSmall,
+                          style: context.headlineSmall,
                         ),
                         Text(
                           "\$${5.00}",
-                          style: Theme.of(context).textTheme.displayMedium,
+                          style: context.displayMedium,
                         ),
                       ],
                     ),
@@ -84,13 +84,11 @@ class CartScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Total",
-                          style: Theme.of(context).textTheme.displayMedium,
+                          style: context.displayMedium,
                         ),
                         Obx(() {
                           return Text(
-                            controller.totalPrice.value == 5.0
-                                ? "\$0.0"
-                                : "\$${controller.totalPrice}",
+                            controller.totalPrice.value == 5.0 ? "\$0.0" : "\$${controller.totalPrice}",
                             style: h2Style.copyWith(
                               color: LightThemeColor.accent,
                             ),
@@ -152,9 +150,7 @@ class CartScreen extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: controller.isLightTheme
-                  ? Colors.white
-                  : DarkThemeColor.primaryLight,
+              color: controller.isLightTheme ? Colors.white : DarkThemeColor.primaryLight,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -167,12 +163,12 @@ class CartScreen extends StatelessWidget {
                   children: [
                     Text(
                       controller.cartFood[index].name,
-                      style: Theme.of(context).textTheme.displayMedium,
+                      style: context.displayMedium,
                     ),
                     const SizedBox(height: 5),
                     Text(
                       "\$${controller.cartFood[index].price}",
-                      style: Theme.of(context).textTheme.headlineSmall,
+                      style: context.headlineSmall,
                     ),
                   ],
                 ),
@@ -180,15 +176,13 @@ class CartScreen extends StatelessWidget {
                 Column(
                   children: [
                     CounterButton(
-                      onIncrementSelected: () =>
-                          controller.increaseItem(controller.cartFood[index]),
-                      onDecrementSelected: () =>
-                          controller.decreaseItem(controller.cartFood[index]),
+                      onIncrementSelected: () => controller.increaseItem(controller.cartFood[index]),
+                      onDecrementSelected: () => controller.decreaseItem(controller.cartFood[index]),
                       size: const Size(24, 24),
                       padding: 0,
                       label: Text(
                         controller.cartFood[index].quantity.toString(),
-                        style: Theme.of(context).textTheme.displayMedium,
+                        style:context.displayMedium,
                       ),
                     ),
                     Text(
@@ -211,9 +205,7 @@ class CartScreen extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      bottomNavigationBar: controller.cartFood.isNotEmpty
-          ? _bottomAppBar(height, width, context)
-          : const SizedBox(),
+      bottomNavigationBar: controller.cartFood.isNotEmpty ? _bottomAppBar(height, width, context) : const SizedBox(),
       appBar: _appBar(context),
       body: EmptyWidget(
         title: "Empty cart",

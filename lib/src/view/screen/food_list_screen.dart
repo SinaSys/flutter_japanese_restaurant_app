@@ -23,15 +23,20 @@ class FoodListScreen extends StatelessWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.location_on_outlined, color: LightThemeColor.accent),
-          Text("Location", style: Theme.of(context).textTheme.bodyLarge)
+          const Icon(
+            Icons.location_on_outlined,
+            color: LightThemeColor.accent,
+          ),
+          Text("Location", style: context.bodyLarge)
         ],
       ),
       actions: [
         IconButton(
           onPressed: () {},
           icon: Badge(
-            badgeStyle: const BadgeStyle(badgeColor: LightThemeColor.accent),
+            badgeStyle: const BadgeStyle(
+              badgeColor: LightThemeColor.accent,
+            ),
             badgeContent: const Text(
               "2",
               style: TextStyle(color: Colors.white),
@@ -69,16 +74,16 @@ class FoodListScreen extends StatelessWidget {
             children: [
               Text(
                 "Morning, Sina",
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: context.headlineSmall,
               ).fadeAnimation(0.2),
               Text(
                 "What do you want to eat \ntoday",
-                style: Theme.of(context).textTheme.displayLarge,
+                style: context.displayLarge,
               ).fadeAnimation(0.4),
               _searchBar(),
               Text(
                 "Available for you",
-                style: Theme.of(context).textTheme.displaySmall,
+                style: context.displaySmall,
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 15),
@@ -100,17 +105,14 @@ class FoodListScreen extends StatelessWidget {
                               alignment: Alignment.center,
                               padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                color: category.isSelected
-                                    ? LightThemeColor.accent
-                                    : Colors.transparent,
+                                color: category.isSelected ? LightThemeColor.accent : Colors.transparent,
                                 borderRadius: const BorderRadius.all(
                                   Radius.circular(15),
                                 ),
                               ),
                               child: Text(
                                 category.type.name.toCapital,
-                                style:
-                                    Theme.of(context).textTheme.headlineMedium,
+                                style: context.headlineMedium,
                               ),
                             ),
                           );
@@ -137,16 +139,15 @@ class FoodListScreen extends StatelessWidget {
                   children: [
                     Text(
                       "Best food of the week",
-                      style: Theme.of(context).textTheme.displaySmall,
+                      style: context.displaySmall,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 20),
                       child: Text(
                         "See all",
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineMedium
-                            ?.copyWith(color: LightThemeColor.accent),
+                        style: context.headlineMedium.copyWith(
+                          color: LightThemeColor.accent,
+                        ),
                       ),
                     ),
                   ],

@@ -46,22 +46,19 @@ class FoodDetailScreen extends StatelessWidget {
       elevation: 0.0,
       backgroundColor: LightThemeColor.accent,
       onPressed: onPressed,
-      child: food.isFavorite
-          ? const Icon(AppIcon.heart)
-          : const Icon(AppIcon.outlinedHeart),
+      child: food.isFavorite ? const Icon(AppIcon.heart) : const Icon(AppIcon.outlinedHeart),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    double height = context.height;
+    double width = context.width;
 
     return Scaffold(
       appBar: _appBar(context),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-      floatingActionButton:
-          GetBuilder(builder: (FoodController foodController) {
+      floatingActionButton: GetBuilder(builder: (FoodController foodController) {
         return fab(() => foodController.isFavoriteFood(food));
       }),
       bottomNavigationBar: BottomAppBar(
@@ -72,9 +69,7 @@ class FoodDetailScreen extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: controller.isLightTheme
-                    ? Colors.white
-                    : DarkThemeColor.primaryLight,
+                color: controller.isLightTheme ? Colors.white : DarkThemeColor.primaryLight,
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
@@ -107,12 +102,12 @@ class FoodDetailScreen extends StatelessWidget {
                           const SizedBox(width: 15),
                           Text(
                             food.score.toString(),
-                            style: Theme.of(context).textTheme.titleMedium,
+                            style: context.titleMedium,
                           ),
                           const SizedBox(width: 5),
                           Text(
                             "(${food.voter})",
-                            style: Theme.of(context).textTheme.titleMedium,
+                            style: context.titleMedium,
                           )
                         ],
                       ).fadeAnimation(0.4),
@@ -122,22 +117,18 @@ class FoodDetailScreen extends StatelessWidget {
                         children: [
                           Text(
                             "\$${food.price}",
-                            style: Theme.of(context)
-                                .textTheme
-                                .displayLarge
-                                ?.copyWith(color: LightThemeColor.accent),
+                            style: context.displayLarge.copyWith(
+                              color: LightThemeColor.accent,
+                            ),
                           ),
                           GetBuilder(
                             builder: (FoodController foodController) {
                               return CounterButton(
-                                onIncrementSelected: () =>
-                                    foodController.increaseItem(food),
-                                onDecrementSelected: () =>
-                                    foodController.decreaseItem(food),
+                                onIncrementSelected: () => foodController.increaseItem(food),
+                                onDecrementSelected: () => foodController.decreaseItem(food),
                                 label: Text(
                                   food.quantity.toString(),
-                                  style:
-                                      Theme.of(context).textTheme.displayLarge,
+                                  style: context.displayLarge,
                                 ),
                               );
                             },
@@ -147,12 +138,12 @@ class FoodDetailScreen extends StatelessWidget {
                       const SizedBox(height: 15),
                       Text(
                         "Description",
-                        style: Theme.of(context).textTheme.displayMedium,
+                        style: context.displayMedium,
                       ).fadeAnimation(0.8),
                       const SizedBox(height: 15),
                       Text(
                         food.description,
-                        style: Theme.of(context).textTheme.titleMedium,
+                        style: context.titleMedium,
                       ).fadeAnimation(0.8),
                       const SizedBox(height: 70),
                     ],
@@ -172,9 +163,8 @@ class FoodDetailScreen extends StatelessWidget {
                     child: Text(
                       "Add to cart",
                       style: TextStyle(
-                          color: controller.isLightTheme
-                              ? Colors.white
-                              : Colors.black),
+                        color: controller.isLightTheme ? Colors.white : Colors.black,
+                      ),
                     ),
                   ),
                 ))
@@ -183,10 +173,11 @@ class FoodDetailScreen extends StatelessWidget {
       ),
       body: ScaleAnimation(
         child: Center(
-            child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Image.asset(food.image, scale: 2),
-        )),
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Image.asset(food.image, scale: 2),
+          ),
+        ),
       ),
     );
   }

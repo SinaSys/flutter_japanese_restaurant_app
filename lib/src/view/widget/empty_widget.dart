@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_asset.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
 
 enum EmptyWidgetType { cart, favorite }
 
@@ -29,7 +30,10 @@ class EmptyWidget extends StatelessWidget {
                     ? Image.asset(AppAsset.emptyCart, width: 300)
                     : Image.asset(AppAsset.emptyFavorite, width: 300),
                 const SizedBox(height: 10),
-                Text(title, style: Theme.of(context).textTheme.displayMedium)
+                Text(
+                  title,
+                  style: context.displayMedium,
+                )
               ],
             ),
           );

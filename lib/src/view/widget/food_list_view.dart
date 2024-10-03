@@ -29,8 +29,7 @@ class FoodListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: isReversedList ? 3 : foods.length,
         itemBuilder: (_, index) {
-          Food food =
-              isReversedList ? foods.reversed.toList()[index] : foods[index];
+          Food food = isReversedList ? foods.reversed.toList()[index] : foods[index];
           return GestureDetector(
             onTap: () {
               Navigator.push(
@@ -42,9 +41,7 @@ class FoodListView extends StatelessWidget {
               width: 160,
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: controller.isLightTheme
-                    ? Colors.white
-                    : DarkThemeColor.primaryLight,
+                color: controller.isLightTheme ? Colors.white : DarkThemeColor.primaryLight,
                 borderRadius: const BorderRadius.all(Radius.circular(20)),
               ),
               child: Padding(
@@ -59,10 +56,9 @@ class FoodListView extends StatelessWidget {
                     ),
                     Text(
                       food.name,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineMedium
-                          ?.copyWith(fontWeight: FontWeight.bold),
+                      style: context.headlineMedium.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ).fadeAnimation(0.7),

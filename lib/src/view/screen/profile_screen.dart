@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_japanese_restaurant_app/core/app_asset.dart';
+import 'package:flutter_japanese_restaurant_app/core/app_extension.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -16,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           Text(
             "Hello Sina!",
-            style: Theme.of(context).textTheme.displayLarge,
+            style: context.displayLarge,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -25,7 +26,7 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(width: 10),
               Text(
                 "https://github.com/SinaSys",
-                style: Theme.of(context).textTheme.displaySmall,
+                style: context.displaySmall,
               )
             ],
           )
