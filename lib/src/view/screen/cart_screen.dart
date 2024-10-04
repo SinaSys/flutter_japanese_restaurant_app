@@ -182,7 +182,7 @@ class CartScreen extends StatelessWidget {
                       padding: 0,
                       label: Text(
                         controller.cartFood[index].quantity.toString(),
-                        style:context.displayMedium,
+                        style: context.displayMedium,
                       ),
                     ),
                     Text(
@@ -202,8 +202,8 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    double height = context.height;
+    double width = context.width;
     return Scaffold(
       bottomNavigationBar: controller.cartFood.isNotEmpty ? _bottomAppBar(height, width, context) : const SizedBox(),
       appBar: _appBar(context),
