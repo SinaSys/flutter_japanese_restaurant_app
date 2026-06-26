@@ -1,8 +1,9 @@
 plugins {
     id "com.android.application"
-    id "org.jetbrains.kotlin.android" 
+    id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
 }
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -10,6 +11,7 @@ if (localPropertiesFile.exists()) {
         localProperties.load(reader)
     }
 }
+
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
@@ -24,8 +26,8 @@ if (flutterVersionName == null) {
 
 android {
     compileSdkVersion flutter.compileSdkVersion
-    compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
+    namespace = "com.sinasys.flutter_japanese_restaurant_app.flutter_japanese_restaurant_app"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
