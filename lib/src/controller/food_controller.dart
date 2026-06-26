@@ -42,7 +42,7 @@ class FoodController extends GetxController {
     return price.toString();
   }
 
-  calculateTotalPrice() {
+  void calculateTotalPrice() {
     totalPrice.value = 5;
     for (var element in cartFood) {
       totalPrice.value += element.quantity * element.price;
@@ -54,7 +54,7 @@ class FoodController extends GetxController {
     }
   }
 
-  addToCart(Food food) {
+  void addToCart(Food food) {
     if (food.quantity > 0) {
       cartFood.add(food);
       cartFood.assignAll(cartFood.distinctBy((item) => item));
@@ -62,7 +62,7 @@ class FoodController extends GetxController {
     }
   }
 
-  filterItemByCategory(FoodCategory category) {
+  void filterItemByCategory(FoodCategory category) {
     for (var element in AppData.categories) {
       element.isSelected = false;
     }
@@ -80,7 +80,7 @@ class FoodController extends GetxController {
     filteredFoods.refresh();
   }
 
-  isFavoriteFood(Food food) {
+  void isFavoriteFood(Food food) {
     food.isFavorite = !food.isFavorite;
     update();
     if (food.isFavorite) {
@@ -91,7 +91,7 @@ class FoodController extends GetxController {
     }
   }
 
-  removeCartItemAtSpecificIndex(int index) {
+  void removeCartItemAtSpecificIndex(int index) {
     cartFood.removeAt(index);
     calculateTotalPrice();
     update();
