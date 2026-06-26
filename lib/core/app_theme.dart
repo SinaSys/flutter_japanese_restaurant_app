@@ -52,7 +52,7 @@ class AppThemes {
         titleMedium: subtitleLight,
       ),
       iconTheme: const IconThemeData(color: Colors.black45),
-      bottomAppBarTheme: const BottomAppBarTheme(color: Colors.white),
+      bottomAppBarTheme: const BottomAppBarThemeData(color: Colors.white),
     ),
     AppTheme.darkTheme: ThemeData(
       useMaterial3: false,
@@ -100,7 +100,7 @@ class AppThemes {
         titleMedium: subtitleLight.copyWith(color: Colors.white60),
       ),
       iconTheme: const IconThemeData(color: Colors.white),
-      bottomAppBarTheme: const BottomAppBarTheme(
+      bottomAppBarTheme: const BottomAppBarThemeData(
         color: DarkThemeColor.primaryLight,
       ),
     )
