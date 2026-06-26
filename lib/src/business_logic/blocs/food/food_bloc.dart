@@ -105,8 +105,8 @@ class FoodBloc extends Bloc<FoodEvent, FoodState> {
     return totalPrice;
   }
 
-  get getCartList => state.foodList.where((element) => element.cart).toList();
+  List<Food> get getCartList => state.foodList.where((element) => element.cart).toList();
 
-  get getFavoriteList =>
+  List<Food> get getFavoriteList =>
       state.foodList.where((element) => element.isFavorite).toList();
 }

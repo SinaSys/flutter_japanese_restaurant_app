@@ -22,7 +22,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
 
   Repository repository;
 
-  _filterItemByCategory(CategoryEvent event, Emitter<CategoryState> emit) {
+  void _filterItemByCategory(CategoryEvent event, Emitter<CategoryState> emit) {
     final List<FoodCategory> categories = state.foodCategories.map((element) {
       if (element == event.category) {
         return event.category.copyWith(isSelected: true);

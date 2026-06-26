@@ -3,7 +3,7 @@ import 'package:flutter_japanese_restaurant_app/src/data/model/food.dart';
 import 'package:flutter_japanese_restaurant_app/src/data/model/food_category.dart';
 
 class Repository {
-  get getFoodList {
+  List<Food> get getFoodList {
     const dummyText =
         "Lorem Ipsum is simply dummy text of the printing and typesetting "
         "industry. Lorem Ipsum has been the industry's standard dummy text ever "
@@ -129,7 +129,7 @@ class Repository {
     return foodItems;
   }
 
-  get getCategories {
+  List<FoodCategory> get getCategories {
     const List<FoodCategory> categories = [
       FoodCategory(type: FoodType.all, isSelected: true),
       FoodCategory(type: FoodType.sushi, isSelected: false),
