@@ -18,7 +18,7 @@ class CategoryCubit extends Cubit<CategoryState> {
 
   Repository repository;
 
-  filterItemByCategory(FoodCategory category) {
+  void filterItemByCategory(FoodCategory category) {
     final List<FoodCategory> categories = state.foodCategories.map((element) {
       if (element == category) {
         return category.copyWith(isSelected: true);

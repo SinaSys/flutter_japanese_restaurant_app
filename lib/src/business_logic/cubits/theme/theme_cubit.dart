@@ -5,7 +5,7 @@ import 'package:flutter_japanese_restaurant_app/src/business_logic/cubits/theme/
 class ThemeCubit extends Cubit<ThemeState> {
   ThemeCubit() : super(ThemeState.initial());
 
-  switchTheme() {
+  void switchTheme() {
     if (state.theme == AppThemes.appThemeData[AppTheme.lightTheme]) {
       emit(state.copyWith(theme: AppThemes.appThemeData[AppTheme.darkTheme]!));
     } else {
